@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 12:28:14 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/05/06 15:53:00 by vviterbo         ###   ########.fr       */
+/*   Created: 2025/05/06 15:22:45 by vviterbo          #+#    #+#             */
+/*   Updated: 2025/05/06 15:48:57 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-PhoneBook::~PhoneBook()
+#include "Contact.hpp"
+
+class	PhoneBook
 {
-	int	n_elem;
+	public:
+		PhoneBook();
+		~PhoneBook();
+		void	print_overview();
+		void	print_indx(int	i);
+		void	add(Contact	*new_entry);
+	private:
+		int		curr_idx;
+		bool	is_full;
+		Contact	*contact_list[8];
+};
 
-	n_elem = std::min(this->curr_idx, 7);
-	while (n_elem >= 0)
-	{
-		delete this->contact_list[n_elem];
-		n_elem--;
-	}
-}
-
-void	PhoneBook::add(Contact *new_entry)
-{
-	this->contact_list[curr_idx % 8] = new_entry;
-	this->curr_idx++;
-	if (this->curr_idx >= 16)
-		this->curr_idx -= 8;
-}
+#endif

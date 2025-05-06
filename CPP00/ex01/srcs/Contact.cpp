@@ -6,19 +6,18 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 12:28:26 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/05/06 16:54:11 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/05/06 17:47:47 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-
 void	Contact::print_contact_mini()
 {
 	if (this->f_name.length() > 10)
-		std::cout << '|' << std::setw(9) << this->f_name << ".|";
+		std::cout << std::setw(9) << this->f_name << ".|";
 	else
-		std::cout << '|' << std::setw(10) << this->f_name << '|';
+		std::cout << std::setw(10) << this->f_name << '|';
 	if (this->l_name.length() > 10)
 		std::cout << std::setw(9) << this->l_name << ".|";
 	else
@@ -27,6 +26,7 @@ void	Contact::print_contact_mini()
 		std::cout << std::setw(9) << this->nickname << '.';
 	else
 		std::cout << std::setw(10) << this->nickname;
+	std::cout << std::endl;
 }
 
 void	Contact::print_contact()
@@ -35,7 +35,7 @@ void	Contact::print_contact()
 	std::cout << "Last Name: " << this->l_name << '\n';
 	std::cout << "Nick Name: " << this->nickname << '\n';
 	std::cout << "Phone Number: " << this->phone_num << '\n';
-	std::cout << "(Darkest) Secret: " << this->secret << '\n';	
+	std::cout << "(Darkest) Secret: " << this->secret << '\n';
 }
 
 void	Contact::set_f_name(std::string fname)
@@ -50,11 +50,11 @@ void	Contact::set_nick_name(std::string nick_name)
 {
 	this->nickname = nick_name;
 }
-void	Contact::set_phone_num(std::string phone_num)
+void	Contact::set_phone_num(std::string phonenum)
 {
-	this->phone_num = phone_num;
+	this->phone_num = phonenum;
 }
-void	Contact::set_secret(std::string secret)
+void	Contact::set_secret(std::string dark_secret)
 {
-	this->secret = secret;
+	this->secret = dark_secret;
 }

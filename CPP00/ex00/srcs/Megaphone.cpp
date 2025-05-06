@@ -6,16 +6,27 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 10:22:08 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/05/06 12:37:37 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/05/06 15:51:55 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Megaphone.hpp"
+#include <cctype>
+#include <iostream>
+#include <cstdio>
+# include <string>
+
+class	Megaphone
+{
+	public:
+		Megaphone();
+		~Megaphone();
+		void	yell(const std::string str);
+};
 
 Megaphone::Megaphone() {}
 Megaphone::~Megaphone() {}
 
-void	Megaphone::yell(const char *str)
+void	Megaphone::yell(const std::string str)
 {
 	int		i;
 	char	c;
@@ -32,6 +43,7 @@ void	Megaphone::yell(const char *str)
 int	main(int argc, char *argv[])
 {
 	Megaphone	speaker;
+	std::string	cstr;
 	int			i;
 
 	i = 1;
@@ -43,7 +55,8 @@ int	main(int argc, char *argv[])
 	}
 	while (i < argc)
 	{
-		speaker.yell(argv[i]);
+		cstr = argv[i];
+		speaker.yell(cstr);
 		i++;
 	}
 	std::cout << std::endl;

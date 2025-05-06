@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 15:49:16 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/05/06 16:35:25 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/05/06 16:56:32 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,36 +17,38 @@ void	parse_phonebook_entry(PhoneBook phonebook)
 	std::string	field;
 	Contact		new_contact;
 
-	std::cout << "First Name" << std::endl;
+	std::cout << "First Name: ";
 	std::cin >> field;
 	if (field.length())
 		new_contact.set_f_name(field);
 	else
 		return ;
-	std::cout << "Last Name" << std::endl;
+	std::cout << std::endl << "Last Name: ";
 	std::cin >> field;
 	if (field.length())
 		new_contact.set_l_name(field);
 	else
 		return ;
-	std::cout << "NickName" << std::endl;
+	std::cout << std::endl << "NickName: ";
 	std::cin >> field;
 	if (field.length())
 		new_contact.set_nick_name(field);
 	else
 		return ;
-	std::cout << "Phone Number" << std::endl;
+	std::cout << std::endl << "Phone Number: ";
 	std::cin >> field;
 	if (field.length())
 		new_contact.set_phone_num(field);
 	else
 		return ;
-	std::cout << "(Darkest) Secret" << std::endl;
+	std::cout << std::endl << "(Darkest) Secret: ";
 	std::cin >> field;
 	if (field.length())
 		new_contact.set_secret(field);
 	else
 		return ;
+	std::cout << std::endl;
+	phonebook.add(new_contact);
 }
 
 void	execute_cmd(PhoneBook phonebook, std::string cmd)
@@ -58,11 +60,11 @@ void	execute_cmd(PhoneBook phonebook, std::string cmd)
 		parse_phonebook_entry(phonebook);
 	else if (cmd.compare("SEARCH"))
 	{
-		display_extract(phonebook);
+		phonebook.display_extract();
 		std::cin >> index_str;
 		idx = std::atoi(index_str);
+		phonebook.contact_list[idx].print_contact();
 	}
-
 }
 
 int	main(void)
@@ -76,6 +78,6 @@ int	main(void)
 		if (cmd.compare("EXIT"))
 			break ;
 		else
-			execute_cmd(cmd);
+			execute_cmd(phonebook, cmd);
 	}
 }

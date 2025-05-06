@@ -6,13 +6,37 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 12:28:26 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/05/06 16:33:41 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/05/06 16:54:11 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
 
+void	Contact::print_contact_mini()
+{
+	if (this->f_name.length() > 10)
+		std::cout << '|' << std::setw(9) << this->f_name << ".|";
+	else
+		std::cout << '|' << std::setw(10) << this->f_name << '|';
+	if (this->l_name.length() > 10)
+		std::cout << std::setw(9) << this->l_name << ".|";
+	else
+		std::cout << std::setw(10) << this->l_name << '|';
+	if (this->nickname.length() > 10)
+		std::cout << std::setw(9) << this->nickname << '.';
+	else
+		std::cout << std::setw(10) << this->nickname;
+}
+
+void	Contact::print_contact()
+{
+	std::cout << "First Name: " << this->f_name << '\n';
+	std::cout << "Last Name: " << this->l_name << '\n';
+	std::cout << "Nick Name: " << this->nickname << '\n';
+	std::cout << "Phone Number: " << this->phone_num << '\n';
+	std::cout << "(Darkest) Secret: " << this->secret << '\n';	
+}
 
 void	Contact::set_f_name(std::string fname)
 {

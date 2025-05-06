@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 14:26:38 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/05/06 16:33:30 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/05/06 16:36:03 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class	Contact
 	public:
 		Contact();
 		~Contact();
-		void	print_contact_oneline();
+		void	print_contact_mini();
 		void	print_contact();
 		void	set_f_name(std::string fname);
 		void	set_l_name(std::string lname);

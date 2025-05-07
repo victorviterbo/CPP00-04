@@ -6,7 +6,7 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/05 15:40:14 by vviterbo          #+#    #+#              #
-#    Updated: 2025/05/06 12:30:10 by vviterbo         ###   ########.fr        #
+#    Updated: 2025/05/06 20:23:45 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 
 INCLUDE = -I./include/
 
-SRCS_MAIN_F = PhoneBook.cpp Contact.cpp
+SRCS_MAIN_F = PhoneBook.cpp Contact.cpp main.cpp
 
 SRCS = $(addprefix srcs/, $(SRCS_MAIN_F))
 

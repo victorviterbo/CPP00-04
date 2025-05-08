@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 11:57:22 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/05/08 15:16:44 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/05/08 18:59:50 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	Account::displayAccountsInfos( void )
 	std::cout << getTotalAmount() << ";deposits:" << getNbDeposits();
 	std::cout << ";withdrawal:" << getNbWithdrawals() << std::endl;
 }
-
+cat <(cat out | cut -d' ' -f2-) <(cat 19920104_091532.log | cut -d' ' -f2-)
 void	Account::makeDeposit( int deposit )
 {
 	_totalAmount += deposit;

@@ -16,9 +16,15 @@
 //                               Account Class                                //
 // ************************************************************************** //
 
+# include <cctype>
+# include <cstdio>
+# include <iostream>
+# include <iomanip>
+# include <sstream>
+# include <string>
+# include <ctime>
+
 class Account {
-
-
 public:
 
 	typedef Account		t;

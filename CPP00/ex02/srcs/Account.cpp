@@ -6,11 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 11:57:22 by vviterbo          #+#    #+#             */
-<<<<<<< Updated upstream
-/*   Updated: 2025/05/13 17:39:45 by vviterbo         ###   ########.fr       */
-=======
-/*   Updated: 2025/05/13 17:29:40 by vviterbo         ###   ########.fr       */
->>>>>>> Stashed changes
+/*   Updated: 2025/05/13 19:06:00 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 11:57:22 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/05/12 13:19:20 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/05/13 17:39:45 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	Account::displayAccountsInfos( void )
 
 void	Account::makeDeposit( int deposit )
 {
+	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";p_amount:" << _amount;
 	std::cout << ";deposit:" << deposit << ";amount:" << _amount + deposit; 
 	std::cout << ";nb_deposits:" << _nbDeposits + 1 << std::endl;

@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 15:49:16 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/05/08 13:34:21 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/05/14 19:10:32 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(void)
 	PhoneBook	phonebook;
 
 	std::cout << "Please enter one of the following: ADD, SEARCH, EXIT: ";
-	while (std::cin >> cmd)
+	while (std::getline(std::cin, cmd))
 	{
 		if (!cmd.compare("EXIT"))
 			break ;

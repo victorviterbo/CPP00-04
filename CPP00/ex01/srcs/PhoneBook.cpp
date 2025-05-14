@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 12:28:14 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/05/08 14:24:48 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/05/14 20:00:49 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,19 @@ void	PhoneBook::display_extract()
 	int	i;
 
 	i = 0;
-	while (i < this->_curr_idx && i < 8)
+	std::cout << std::string(68, '*') << std::endl;
+	std::cout << "|  Index   |First Name|Last Name |Nick Name | Phone Num |  Secret  |";
+	std::cout << std::endl;
+	std::cout << std::string(69, '-') << std::endl;
+	while (i < std::min(this->_curr_idx, 8))
 	{
-		std::cout << std::setw(10) << i << '|';
+		std::cout << '|' << std::setw(10) << i << '|';
 		this->_contact_list[i].print_contact_mini();
+		if (i + 1 < std::min(this->_curr_idx, 8))
+			std::cout << std::string(68, '-') << std::endl;
 		i++;
 	}
+	std::cout << std::string(68, '*') << std::endl;
 }
 
 void	PhoneBook::print_ith(int idx)
@@ -45,46 +52,16 @@ void	PhoneBook::print_ith(int idx)
 	this->_contact_list[idx].print_contact();
 }
 
-int		PhoneBook::get_current_idx()
-{
-	return(this->_curr_idx);
-}
-
 void	PhoneBook::parse_phonebook_entry()
 {
 	std::string	field;
 	Contact		new_contact;
 
-	std::cout << "First Name: ";
-	std::cin >> field;
-	if (field.length())
-		new_contact.set_f_name(field);
-	else
-		return ;
-	std::cout << "Last Name: ";
-	std::cin >> field;
-	if (field.length())
-		new_contact.set_l_name(field);
-	else
-		return ;
-	std::cout << "NickName: ";
-	std::cin >> field;
-	if (field.length())
-		new_contact.set_nick_name(field);
-	else
-		return ;
-	std::cout << "Phone Number: ";
-	std::cin >> field;
-	if (field.length())
-		new_contact.set_phone_num(field);
-	else
-		return ;
-	std::cout << "(Darkest) Secret: ";
-	std::cin >> field;
-	if (field.length())
-		new_contact.set_secret(field);
-	else
-		return ;
+	new_contact.parse_f_name();
+	new_contact.parse_l_name();
+	new_contact.parse_nickname();
+	new_contact.parse_phone_num();
+	new_contact.parse_secret();
 	this->add(new_contact);
 }
 
@@ -112,7 +89,7 @@ void	PhoneBook::execute_cmd(std::string cmd)
 			}
 		}
 		idx = atoi(idx_str.c_str());
-		if (0 <= idx && idx < std::min(get_current_idx(), 7))
+		if (0 <= idx && idx < std::min(this->_curr_idx, 8))
 			print_ith(idx);
 		else
 			std::cout << "index out of range..." << std::endl;

@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 12:28:14 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/05/14 20:00:49 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/05/14 20:04:02 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	PhoneBook::execute_cmd(std::string cmd)
 	{
 		display_extract();
 		std::cout << "Enter the index: " << std::endl;
-		std::cin >> idx_str;
+		std::getline(std::cin, idx_str);
 		if (!idx_str.length())
 			return ;
 		for (size_t i = 0; i < idx_str.length(); i++)

@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 13:47:41 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/05/12 13:57:09 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/05/14 23:09:21 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ Zombie::~Zombie() {};
 
 void	Zombie::announce( void )
 {
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ...";
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

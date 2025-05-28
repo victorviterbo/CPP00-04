@@ -6,17 +6,18 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/05 15:40:14 by vviterbo          #+#    #+#              #
-#    Updated: 2025/05/14 23:01:54 by vviterbo         ###   ########.fr        #
+#    Updated: 2025/05/28 14:31:55 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Zombie
+NAME = Hi
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
 
 INCLUDE = -I./include/
 
-SRCS_MAIN_F = Zombie.cpp main.cpp newZombie.cpp randomChump.cpp
+SRCS_MAIN_F = 	main.cpp Weapon.hpp Weapon.cpp HumanA.hpp HumanA.cpp HumanB.hpp\
+				HumanB.cpp
 
 SRCS = $(addprefix srcs/, $(SRCS_MAIN_F))
 

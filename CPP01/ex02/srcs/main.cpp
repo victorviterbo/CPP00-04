@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/12 13:48:55 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/05/14 23:03:06 by vviterbo         ###   ########.fr       */
+/*   Created: 2025/05/28 14:17:57 by vviterbo          #+#    #+#             */
+/*   Updated: 2025/05/28 14:24:44 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-
-# include <cstdio>
-# include <iostream>
-# include <iomanip>
-# include <sstream>
 # include <string>
-# include <ctime>
+# include <iostream>
 
-class Zombie {
-	public:
-		Zombie( std::string name );
-		~Zombie();
-		void	announce( void );
-	private:
-		std::string	_name;
-};
+int main(void)
+{
+	std::string	string = "HI THIS IS BRAIN";
+	std::string	&stringREF = string;
+	std::string	*stringPTR = &string;
+	
+	std::cout << &string << std::endl;
+	std::cout << &stringREF << std::endl;
+	std::cout << stringPTR << std::endl;
 
-Zombie* newZombie( std::string name );
-void	randomChump(std::string name);
-
-#endif
+	std::cout << string << std::endl;
+	std::cout << stringREF << std::endl;
+	std::cout << *stringPTR << std::endl;
+	
+	return ;
+}

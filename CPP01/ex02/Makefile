@@ -6,11 +6,11 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/05 15:40:14 by vviterbo          #+#    #+#              #
-#    Updated: 2025/05/28 14:23:29 by vviterbo         ###   ########.fr        #
+#    Updated: 2025/05/28 15:30:24 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Hi
+NAME = HI_THIS_IS_BRAIN
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
 

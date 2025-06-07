@@ -6,31 +6,25 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:02:40 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/06/08 00:33:55 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/06/08 00:23:03 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fstream>
 #include <iostream>
 
-int	count_substr(std::string str, std::string to_match)
+bool	contains_substr(std::string str, std::string to_match)
 {
 	size_t	i;
-	int		count;
 
 	i = 0;
-	count = 0;
 	while (i < str.length() - to_match.length() + 1)
 	{
 		if (str.compare(i, to_match.length(), to_match, 0, to_match.length()))
-		{
-			i += to_match.length();
-			count++;
-		}
-		else
-			i++;
+			return (true);
+		i++;
 	}
-	return (count);
+	return (false);
 }
 
 void	replace_substr(std::string& str, std::string to_repl, std::string repl_w)
@@ -42,7 +36,6 @@ void	replace_substr(std::string& str, std::string to_repl, std::string repl_w)
 
 	i = 0;
 	j = 0;
-	tmp.resize(str.length() + count_substr(str, to_repl) * (repl_w.length() - to_repl.length()));
 	while (i < str.length() - to_repl.length() + 1)
 	{
 		if (str.compare(i, to_repl.length(), to_repl, 0, to_repl.length()))
@@ -100,13 +93,10 @@ int	main(int argc, char *argv[])
 	}
 	while (std::getline(instream, new_line))
 	{
-		if (count_substr(lines, to_repl))
+		if (contains_substr(lines, to_repl))
 			replace_substr(lines, to_repl, repl_w);
-		if (to_repl.find('\n'));
-		{
-			outstream << lines.substr(0, lines.find('\n'));
-			lines.erase(0, lines.find('\n'));
-		}
+		outstream << lines.substr(0, lines.find('\n'));
+		lines.erase(0, lines.find('\n'));
 		lines.append(new_line);
 	}
 }

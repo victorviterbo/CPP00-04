@@ -6,17 +6,17 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/05 15:40:14 by vviterbo          #+#    #+#              #
-#    Updated: 2025/05/28 15:33:33 by vviterbo         ###   ########.fr        #
+#    Updated: 2025/06/08 00:19:12 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Unnecessary_violence
+NAME = super_sed
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
 
 INCLUDE = -I./include/
 
-SRCS_MAIN_F = 	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS_MAIN_F = 	main.cpp
 
 SRCS = $(addprefix srcs/, $(SRCS_MAIN_F))
 

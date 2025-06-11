@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:02:40 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/06/11 09:56:17 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/06/11 09:57:54 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	count_substr(std::string str, std::string to_match)
 
 	i = 0;
 	count = 0;
+	if (str.length() < to_match.length())
+		return (0);
 	while (i < str.length() - to_match.length())
 	{
 		if (str.compare(i, to_match.length(), to_match, 0, to_match.length()) == 0)

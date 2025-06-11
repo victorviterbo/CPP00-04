@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:02:40 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/06/08 00:33:55 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/06/11 09:52:47 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	count_substr(std::string str, std::string to_match)
 
 	i = 0;
 	count = 0;
-	while (i < str.length() - to_match.length() + 1)
+	while (i < str.length() - to_match.length())
 	{
-		if (str.compare(i, to_match.length(), to_match, 0, to_match.length()))
+		if (str.compare(i, to_match.length(), to_match, 0, to_match.length()) == 0)
 		{
 			i += to_match.length();
 			count++;
@@ -43,21 +43,32 @@ void	replace_substr(std::string& str, std::string to_repl, std::string repl_w)
 	i = 0;
 	j = 0;
 	tmp.resize(str.length() + count_substr(str, to_repl) * (repl_w.length() - to_repl.length()));
-	while (i < str.length() - to_repl.length() + 1)
+	while (i < str.length())
 	{
-		if (str.compare(i, to_repl.length(), to_repl, 0, to_repl.length()))
+		std::cout << i << std::endl;
+		std::cout << tmp << std::endl;
+		if (str.compare(i, to_repl.length(), to_repl, 0, to_repl.length()) == 0)
 		{
+
+			std::cout << "before concat :" << tmp << i << " " << j << std::endl;
 			tmp += repl_w;
+			std::cout << "after concat :" << tmp << std::endl;
 			i += to_repl.length();
 			j += repl_w.length();
 		}
 		else
 		{
-			tmp[j] = str[i];
+			std::cout << "normal addition " << i << " " << j << std::endl;
+			std::cout << "before add :" << tmp << i << " " << j << std::endl;
+			tmp += str[i];
+			std::cout << "after add :" << tmp << std::endl;
 			i++;
+			j++;
 		}
-		
 	}
+	str = tmp;
+	std::cout << str << std::endl;
+	exit (0);
 }
 
 int	main(int argc, char *argv[])
@@ -77,6 +88,9 @@ int	main(int argc, char *argv[])
 		std::cout << "Wrong number of arguments";
 		return (2);
 	}
+	to_repl = argv[2];
+	repl_w = argv[3];
+	std::cout << argv[0] << argv[1] << argv[2] << argv[3] << std::endl;
 	instream.open(argv[1]);
 	if (!instream.is_open())
 	{
@@ -86,8 +100,6 @@ int	main(int argc, char *argv[])
 	new_fname = argv[1];
 	new_fname.append(".replace");
 	outstream.open(new_fname);
-	to_repl = argv[2];
-	repl_w = argv[3];
 	//instream.seekg (0, instream.beg);
 	n_lines = std::count(to_repl.begin(), to_repl.end(), '\n');
 	std::getline(instream, new_line);
@@ -98,15 +110,25 @@ int	main(int argc, char *argv[])
 		std::getline(instream, new_line);
 		n_lines--;
 	}
-	while (std::getline(instream, new_line))
+	while (1)//
 	{
-		if (count_substr(lines, to_repl))
-			replace_substr(lines, to_repl, repl_w);
-		if (to_repl.find('\n'));
+		std::getline(instream, new_line);
+		std::cout << lines << std::endl;
+		replace_substr(lines, to_repl, repl_w);
+		if (to_repl.find('\n') != std::string::npos)
 		{
+			std::cout << "coucou 1" << std::endl;
 			outstream << lines.substr(0, lines.find('\n'));
-			lines.erase(0, lines.find('\n'));
+			lines.erase(0, lines.find('\n') + 1);
+		}
+		else
+		{
+			std::cout << "coucou 2 :::" << lines << std::endl;
+			outstream << lines << '\n';
+			lines.clear();
+			std::cout << "lala" << std::endl;
 		}
 		lines.append(new_line);
+		std::cout << "daf" << std::endl;
 	}
 }

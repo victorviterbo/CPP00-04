@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:02:40 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/06/11 09:52:47 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/06/11 09:56:17 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,39 +36,26 @@ int	count_substr(std::string str, std::string to_match)
 void	replace_substr(std::string& str, std::string to_repl, std::string repl_w)
 {
 	size_t		i;
-	size_t		j;
 	std::string	tmp;
 	
 
 	i = 0;
-	j = 0;
 	tmp.resize(str.length() + count_substr(str, to_repl) * (repl_w.length() - to_repl.length()));
 	while (i < str.length())
 	{
-		std::cout << i << std::endl;
-		std::cout << tmp << std::endl;
 		if (str.compare(i, to_repl.length(), to_repl, 0, to_repl.length()) == 0)
 		{
 
-			std::cout << "before concat :" << tmp << i << " " << j << std::endl;
 			tmp += repl_w;
-			std::cout << "after concat :" << tmp << std::endl;
 			i += to_repl.length();
-			j += repl_w.length();
 		}
 		else
 		{
-			std::cout << "normal addition " << i << " " << j << std::endl;
-			std::cout << "before add :" << tmp << i << " " << j << std::endl;
 			tmp += str[i];
-			std::cout << "after add :" << tmp << std::endl;
 			i++;
-			j++;
 		}
 	}
 	str = tmp;
-	std::cout << str << std::endl;
-	exit (0);
 }
 
 int	main(int argc, char *argv[])
@@ -110,9 +97,8 @@ int	main(int argc, char *argv[])
 		std::getline(instream, new_line);
 		n_lines--;
 	}
-	while (1)//
+	while (std::getline(instream, new_line))
 	{
-		std::getline(instream, new_line);
 		std::cout << lines << std::endl;
 		replace_substr(lines, to_repl, repl_w);
 		if (to_repl.find('\n') != std::string::npos)

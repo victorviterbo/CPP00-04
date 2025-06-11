@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:02:40 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/06/11 09:57:54 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/06/11 13:28:05 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,22 @@ int	count_substr(std::string str, std::string to_match)
 	return (count);
 }
 
-void	replace_substr(std::string& str, std::string to_repl, std::string repl_w)
+void	replace_substr(std::string& str, std::string to_repl, std::string repl_w, size_t &eol)
 {
 	size_t		i;
 	std::string	tmp;
 	
 
 	i = 0;
+	eol = 0;
 	tmp.resize(str.length() + count_substr(str, to_repl) * (repl_w.length() - to_repl.length()));
 	while (i < str.length())
 	{
 		if (str.compare(i, to_repl.length(), to_repl, 0, to_repl.length()) == 0)
 		{
-
 			tmp += repl_w;
+			if (eol == 0 && to_repl.find('\n') != std::string::npos)
+				eol = tmp.length();
 			i += to_repl.length();
 		}
 		else
@@ -63,6 +65,7 @@ void	replace_substr(std::string& str, std::string to_repl, std::string repl_w)
 int	main(int argc, char *argv[])
 {
 	int				n_lines;
+	size_t			eol;
 	std::string		new_str;
 	std::string		new_line;
 	std::string		lines;
@@ -79,7 +82,7 @@ int	main(int argc, char *argv[])
 	}
 	to_repl = argv[2];
 	repl_w = argv[3];
-	std::cout << argv[0] << argv[1] << argv[2] << argv[3] << std::endl;
+	//std::cout << argv[0] << argv[1] << argv[2] << argv[3] << std::endl;
 	instream.open(argv[1]);
 	if (!instream.is_open())
 	{
@@ -92,31 +95,38 @@ int	main(int argc, char *argv[])
 	//instream.seekg (0, instream.beg);
 	n_lines = std::count(to_repl.begin(), to_repl.end(), '\n');
 	std::getline(instream, new_line);
-	lines = new_line;
-	while (n_lines && new_line.length())
+	if (n_lines)
 	{
-		lines.append(new_line);
-		std::getline(instream, new_line);
-		n_lines--;
+		lines = new_line + '\n';
+		while (n_lines && new_line.length())
+		{
+			std::getline(instream, new_line);
+			new_line += "\n";
+			lines.append(new_line);
+			n_lines--;
+		}
 	}
+	else
+		lines = new_line;
 	while (std::getline(instream, new_line))
 	{
-		std::cout << lines << std::endl;
-		replace_substr(lines, to_repl, repl_w);
+		replace_substr(lines, to_repl, repl_w, eol);
 		if (to_repl.find('\n') != std::string::npos)
 		{
-			std::cout << "coucou 1" << std::endl;
-			outstream << lines.substr(0, lines.find('\n'));
-			lines.erase(0, lines.find('\n') + 1);
+			if (!eol)
+				eol = lines.find('\n');
+			outstream << lines.substr(0, eol);
+			new_line += '\n';
+			lines.erase(0, eol);
 		}
 		else
 		{
-			std::cout << "coucou 2 :::" << lines << std::endl;
 			outstream << lines << '\n';
 			lines.clear();
-			std::cout << "lala" << std::endl;
 		}
 		lines.append(new_line);
-		std::cout << "daf" << std::endl;
 	}
+	outstream << std::endl;
+	outstream.close();
+	instream.close();
 }

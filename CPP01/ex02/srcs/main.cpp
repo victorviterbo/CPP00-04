@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 14:17:57 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/05/28 14:24:44 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/06/12 10:22:24 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ int main(void)
 	std::string	*stringPTR = &string;
 	
 	std::cout << &string << std::endl;
-	std::cout << &stringREF << std::endl;
 	std::cout << stringPTR << std::endl;
+	std::cout << &stringREF << std::endl;
 
 	std::cout << string << std::endl;
-	std::cout << stringREF << std::endl;
 	std::cout << *stringPTR << std::endl;
+	std::cout << stringREF << std::endl;
 	
-	return ;
+	return (0);
 }

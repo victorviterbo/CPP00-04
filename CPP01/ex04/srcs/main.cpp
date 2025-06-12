@@ -6,12 +6,13 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:02:40 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/06/12 10:09:10 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/06/12 10:35:56 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fstream>
 #include <iostream>
+#include <algorithm>
 
 int	count_substr(std::string str, std::string to_match)
 {
@@ -75,14 +76,13 @@ int	main(int argc, char *argv[])
 	std::ifstream	instream;
 	std::ofstream	outstream;
 	
-	if (argc < 2)
+	if (argc != 4)
 	{
-		std::cout << "Wrong number of arguments";
+		std::cout << "Wrong number of arguments" << std::endl;
 		return (2);
 	}
 	to_repl = argv[2];
 	repl_w = argv[3];
-	//std::cout << argv[0] << argv[1] << argv[2] << argv[3] << std::endl;
 	instream.open(argv[1]);
 	if (!instream.is_open())
 	{
@@ -91,8 +91,7 @@ int	main(int argc, char *argv[])
 	}
 	new_fname = argv[1];
 	new_fname.append(".replace");
-	outstream.open(new_fname);
-	//instream.seekg (0, instream.beg);
+	outstream.open(new_fname.c_str());
 	n_lines = std::count(to_repl.begin(), to_repl.end(), '\n');
 	std::getline(instream, new_line);
 	if (n_lines)

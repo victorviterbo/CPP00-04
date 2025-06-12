@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:02:40 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/06/12 10:35:56 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/06/12 13:18:09 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,9 +107,9 @@ int	main(int argc, char *argv[])
 	}
 	else
 		lines = new_line;
+	replace_substr(lines, to_repl, repl_w, eol);
 	while (std::getline(instream, new_line))
 	{
-		replace_substr(lines, to_repl, repl_w, eol);
 		if (to_repl.find('\n') != std::string::npos)
 		{
 			if (!eol)
@@ -124,6 +124,7 @@ int	main(int argc, char *argv[])
 			lines.clear();
 		}
 		lines.append(new_line);
+		replace_substr(lines, to_repl, repl_w, eol);
 	}
 	outstream << lines;
 	outstream << std::endl;

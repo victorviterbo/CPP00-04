@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 13:47:41 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/05/28 14:05:50 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/06/12 10:50:12 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ void	Zombie::nameZombie(std::string name)
 	return ;
 }
 
-Zombie::~Zombie() {};
+Zombie::~Zombie()
+{
+	std::cout << "You killed " << this->_name << "! :(" << std::endl;
+}
 
 void	Zombie::announce( void )
 {

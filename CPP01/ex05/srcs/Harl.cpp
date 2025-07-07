@@ -12,16 +12,24 @@
 
 #include "Harl.hpp"
 
+Harl::Harl()
+{
+    this->levels[0] = "DEBUG";
+    this->levels[1] = "INFO";
+    this->levels[2] = "WARNING";
+    this->levels[3] = "ERROR";
+
+    this->messages[0] = &Harl::debug;
+    this->messages[1] = &Harl::info;
+    this->messages[2] = &Harl::warning;
+    this->messages[3] = &Harl::error;
+    return ;
+}
+
+
 void	Harl::complain(std::string level)
 {
     int i;
-    std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    void (Harl::*messages[4])() = {
-        &Harl::debug,
-        &Harl::info,
-        &Harl::warning,
-        &Harl::error
-    };
 
     i = 0;
     while (i < 4)

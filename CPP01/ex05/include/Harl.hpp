@@ -22,9 +22,11 @@
 
 class Harl {
 	public:
-		Harl() {};
+		Harl();
 		~Harl() {};
  		void	complain(std::string level);
+		std::string 	levels[4];
+		void (Harl::*messages[4])();
 	private:
 		void			debug(void);
 		void			info(void);

@@ -28,12 +28,32 @@ void	Harl::complain(std::string level)
     {
         if (levels[i].compare(level) == 0)
         {
-            (this->*messages[i])();
-            return ;
+            break ;
         }
         i++;
     }
-    return ;
+    switch (i)
+    {
+        case 0:
+            std::cout << " [ " << levels[0] << " ] " << std::endl;
+            (this->*messages[0])();
+            std::cout << std::endl;
+        case 1:
+            std::cout << " [ " << levels[1] << " ] " << std::endl;
+            (this->*messages[1])();
+            std::cout << std::endl;
+        case 2:
+            std::cout << " [ " << levels[2] << " ] " << std::endl;
+            (this->*messages[2])();
+            std::cout << std::endl;
+        case 3:
+            std::cout << " [ " << levels[3] << " ] " << std::endl;
+            (this->*messages[3])();
+            std::cout << std::endl;
+            break ;
+        case 4:
+            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+    }
 }
 
 

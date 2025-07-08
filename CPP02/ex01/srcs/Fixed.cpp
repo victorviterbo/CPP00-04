@@ -32,9 +32,7 @@ Fixed::Fixed(const Fixed &num) : _int(num._int) {}
 
 Fixed &Fixed::operator=(const Fixed &operand)
 {
-	if (this != &operand) {
-		_int = operand._int;
-	}
+	this->_int = operand._int;
 	return (*this); 
 }
 

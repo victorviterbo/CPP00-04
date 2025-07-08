@@ -18,10 +18,10 @@ Fixed::~Fixed() {}
 
 Fixed::Fixed(const Fixed &num) : _int(num._int) {}
 
-Fixed &Fixed::operator=(const Fixed &other)
+Fixed &Fixed::operator=(const Fixed &operand)
 {
-    if (this != &other) {
-        _int = other._int;
+    if (this != &operand) {
+        _int = operand._int;
     }
     return (*this); 
 }

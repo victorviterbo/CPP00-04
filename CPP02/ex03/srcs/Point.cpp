@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 16:04:35 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/08 17:55:52 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/08 17:57:52 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ Point &Point::operator=(const Point &operand)
 
 Point::~Point () {};
 
-Fixed	Point::getPointX()
+Fixed	Point::getPointX() const
 {
 	return (this->_x);
 }
-Fixed	Point::getPointY()
+Fixed	Point::getPointY() const
 {
 	return (this->_y);
 }

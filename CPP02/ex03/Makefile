@@ -6,11 +6,11 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/05 15:40:14 by vviterbo          #+#    #+#              #
-#    Updated: 2025/07/08 17:45:05 by vviterbo         ###   ########.fr        #
+#    Updated: 2025/07/08 17:58:13 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Fixed
+NAME = bsp
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
 

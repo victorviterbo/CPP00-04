@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 15:57:41 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/08 17:54:02 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/08 17:57:40 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class Point {
         Point &operator=(const Point &operand);
 		~Point ();
 
-		Fixed	getPointX();
-		Fixed	getPointY();
+		Fixed	getPointX() const;
+		Fixed	getPointY() const;
 		void	setPoint(const float x, const float y);
 		void	setPoint(const Fixed &x, const Fixed &y);
 		void	incr_x();

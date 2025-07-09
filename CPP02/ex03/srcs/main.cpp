@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 22:01:27 by victorviter       #+#    #+#             */
-/*   Updated: 2025/07/08 17:59:59 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/09 21:10:35 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 int main( void )
 {
-    Point   a(0.2,0.2);
-    Point   b(0,0.9);
-    Point   c(0.9,0);
+    Point   a(0.4,0.2);
+    Point   c(0,0.9);
+    Point   b(0.9,0);
     Point   p;
     Fixed   max(1);
 

@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 13:29:49 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/06/12 13:32:00 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/09 14:20:05 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,17 @@ void	Harl::complain(std::string level)
             std::cout << " [ " << levels[0] << " ] " << std::endl;
             (this->*messages[0])();
             std::cout << std::endl;
+            __attribute__((fallthrough));
         case 1:
             std::cout << " [ " << levels[1] << " ] " << std::endl;
             (this->*messages[1])();
             std::cout << std::endl;
+            __attribute__((fallthrough));
         case 2:
             std::cout << " [ " << levels[2] << " ] " << std::endl;
             (this->*messages[2])();
             std::cout << std::endl;
+            __attribute__((fallthrough));
         case 3:
             std::cout << " [ " << levels[3] << " ] " << std::endl;
             (this->*messages[3])();

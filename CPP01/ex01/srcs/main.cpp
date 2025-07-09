@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 15:25:56 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/06/12 10:45:27 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/09 13:54:23 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ int main(void)
 	horde = zombieHorde(n, "Alan");
 	for (int i = 0; i < n; ++i)
 	{
+		std::cout << "Please meet " << std::endl;
 		horde[i].announce();
+		std::cout << "A proud member of the Hord" << std::endl;
 	}
 	delete[] horde;
-	std::cout << "where daf is my destructor call ?";
 }

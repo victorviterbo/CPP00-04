@@ -6,17 +6,17 @@
 #    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/05 15:40:14 by vviterbo          #+#    #+#              #
-#    Updated: 2025/07/10 15:30:15 by vviterbo         ###   ########.fr        #
+#    Updated: 2025/07/10 16:42:24 by vviterbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = ScavTrap
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
 
 INCLUDE = -I./include/
 
-SRCS_MAIN_F = main.cpp ClapTrap.cpp
+SRCS_MAIN_F = main.cpp ClapTrap.cpp ScavTrap.cpp
 
 SRCS = $(addprefix srcs/, $(SRCS_MAIN_F))
 

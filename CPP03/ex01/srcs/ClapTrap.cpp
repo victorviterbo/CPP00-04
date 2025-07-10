@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:37:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/10 15:40:37 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/10 17:00:44 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 
 ClapTrap::ClapTrap() : _name(""), _hp(10), _ep(10), _damages(0)
 {
-	std::cout << "Unparamtrized Constructor Called" << std::endl;
-};
+	std::cout << "Unparamtrized ClapTrap Constructor Called" << std::endl;
+}
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _damages(0)
 {
-	std::cout << "Paramtrized Constructor Called" << std::endl;
-};
+	std::cout << "Paramtrized ClapTrap Constructor Called" << std::endl;
+}
 
 ClapTrap::ClapTrap(ClapTrap &other) :_name(other._name), _hp(other._hp), _ep(other._ep), _damages(other._damages)
 {
-	std::cout << "Copy Constructor Called" << std::endl;
-};
+	std::cout << "ClapTrap Copy Constructor Called" << std::endl;
+}
 
 ClapTrap &ClapTrap::operator=(ClapTrap &operand)
 {
@@ -34,16 +34,16 @@ ClapTrap &ClapTrap::operator=(ClapTrap &operand)
 	this->_hp = operand._hp;
 	this->_ep = operand._ep;
 	this->_damages = operand._damages;
-	std::cout << "Assignement operator Called" << std::endl;
+	std::cout << "ClapTrap Assignement operator Called" << std::endl;
 	return (*this);
 }
 
 ClapTrap::~ClapTrap() 
 {
-	std::cout << "Destructor Called" << std::endl;
-};
+	std::cout << "ClapTrap Destructor Called" << std::endl;
+}
 
-void ClapTrap::attack(const std::string& target)
+void	ClapTrap::attack(const std::string& target)
 {
 	if (!this->_hp)
 	{
@@ -63,7 +63,7 @@ void ClapTrap::attack(const std::string& target)
 	return ;
 }
 
-void ClapTrap::takeDamage(unsigned int amount)
+void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (!this->_hp)
 	{
@@ -84,7 +84,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	return ;
 }
 
-void ClapTrap::beRepaired(unsigned int amount)
+void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (!this->_ep)
 	{
@@ -97,3 +97,20 @@ void ClapTrap::beRepaired(unsigned int amount)
 	std::cout << "ClapTrap " << this->_name  << " healed himself by " << amount << " hp and has now " << this->_hp << " hp" << std::endl;
 	return ;
 }
+/*
+void	ClapTrap::setHp(unsigned int amount)
+{
+	this->_hp = amount;
+	return ;
+}
+
+void	ClapTrap::setEp(unsigned int amount)
+{
+	this->_ep = amount;
+	return ;
+}
+void	ClapTrap::setDamage(unsigned int amount)
+{
+	this->_damages = amount;
+	return ;
+}*/

@@ -6,19 +6,20 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 15:24:15 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/11 13:38:12 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/11 13:46:19 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int	main(void)
 {
-	ScavTrap	player1;
-	ScavTrap	player2("ConanLeB");
-	ScavTrap	player3("CptnFourmi");
-	ScavTrap	player4(player2);
+	FragTrap	player1;
+	FragTrap	player2("ConanLeB");
+	FragTrap	player3("CptnFourmi");
+	FragTrap	player4(player2);
 
 	player1 = player3;
 	std::cout << "Fourmi attacks Conan" << std::endl;

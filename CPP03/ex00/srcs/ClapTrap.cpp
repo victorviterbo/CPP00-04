@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:37:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/10 15:40:37 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/11 13:18:16 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 ClapTrap::ClapTrap() : _name(""), _hp(10), _ep(10), _damages(0)
 {
-	std::cout << "Unparamtrized Constructor Called" << std::endl;
+	std::cout << "Unparametrized Constructor Called" << std::endl;
 };
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _damages(0)
 {
-	std::cout << "Paramtrized Constructor Called" << std::endl;
+	std::cout << "Parametrized Constructor Called" << std::endl;
 };
 
 ClapTrap::ClapTrap(ClapTrap &other) :_name(other._name), _hp(other._hp), _ep(other._ep), _damages(other._damages)

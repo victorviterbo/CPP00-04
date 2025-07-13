@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:31:32 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/11 15:49:34 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/11 16:33:29 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
+class FragTrap : virtual public ClapTrap {
 	public :
 		FragTrap();
 		FragTrap(std::string name);

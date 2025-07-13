@@ -18,14 +18,19 @@ DiamondTrap::DiamondTrap()
 	this->setStats(100, 50, 20);
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name)
+DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name.append("_claptrap_name")), FragTrap(name.append("_claptrap_name"))
 {
 	std::cout << "Parametrized DiamondTrap Constructor Called" << std::endl;
-	this->setStats(100, 50, 20);
+	//this->setHp(this->ScavTrap::getHp());
+	this->_name = name;
+	this->setHp(ScavTrap::getHp());
+	this->setEp(FragTrap::getEp());
+	std::cout << "WTF : " << FragTrap::getEp() << std::endl;
+	this->setDamages(ScavTrap::getDamages());
 	return ;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap &other) : ClapTrap(other), ScavTrap(other), FragTrap(other)
+DiamondTrap::DiamondTrap(DiamondTrap &other) : ScavTrap(other), FragTrap(other)
 {
 	std::cout << "DiamondTrap Copy Constructor Called" << std::endl;
 }

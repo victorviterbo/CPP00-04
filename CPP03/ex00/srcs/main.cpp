@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 15:24:15 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/10 15:42:26 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/18 12:47:12 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ int	main(void)
 	player3.beRepaired(1);
 	player3.beRepaired(1000);
 	player3.beRepaired(1);
-	std::cout << "Segmentation Fault" << std::endl;
+	std::cout << "Segmentation fault (core dumped)" << std::endl;
 }

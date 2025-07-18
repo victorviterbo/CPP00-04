@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   wrongwrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/10 13:31:32 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/18 10:59:51 by vviterbo         ###   ########.fr       */
+/*   Created: 2025/07/18 10:35:01 by vviterbo          #+#    #+#             */
+/*   Updated: 2025/07/18 11:09:43 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
-
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
 # include <cstdio>
 # include <iostream>
@@ -20,22 +19,17 @@
 # include <sstream>
 # include <string>
 
-class ClapTrap {
+# include "wrongAnimal.hpp"
+
+class wrongCat : public wrongAnimal {
 	public :
-		ClapTrap();
-		ClapTrap(std::string name);
-		ClapTrap(ClapTrap &other);
-		ClapTrap &operator=(ClapTrap &operand);
-		~ClapTrap();
-		
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-	private :
-		std::string		_name;
-		unsigned int	_hp;
-		unsigned int	_ep;
-		unsigned int	_damages;
+		wrongCat();
+		wrongCat(std::string name);
+		wrongCat(wrongCat &other);
+		wrongCat &operator=(wrongCat &operand);
+		~wrongCat();
+
+		void	makeSound(void) const;
 };
 
 #endif

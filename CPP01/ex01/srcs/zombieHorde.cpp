@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 15:20:06 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/05/28 14:08:01 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/18 13:53:35 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 Zombie* zombieHorde( int N, std::string name )
 {
-	Zombie	*Horde;
+	Zombie	*Horde = new Zombie[N];
 	int		i;
 
 	i = 0;
-	Horde = new Zombie[N];
+	//Horde = ;
 	while (i < N)
 	{
 		Horde[i].nameZombie(name);

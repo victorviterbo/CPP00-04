@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   wrongAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/10 13:31:32 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/18 10:59:51 by vviterbo         ###   ########.fr       */
+/*   Created: 2025/07/18 10:35:14 by vviterbo          #+#    #+#             */
+/*   Updated: 2025/07/18 11:07:11 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 
 # include <cstdio>
@@ -20,22 +20,18 @@
 # include <sstream>
 # include <string>
 
-class ClapTrap {
+class wrongAnimal {
 	public :
-		ClapTrap();
-		ClapTrap(std::string name);
-		ClapTrap(ClapTrap &other);
-		ClapTrap &operator=(ClapTrap &operand);
-		~ClapTrap();
-		
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-	private :
-		std::string		_name;
-		unsigned int	_hp;
-		unsigned int	_ep;
-		unsigned int	_damages;
+		wrongAnimal();
+		wrongAnimal(std::string name);
+		wrongAnimal(wrongAnimal &other);
+		wrongAnimal &operator=(wrongAnimal &operand);
+		~wrongAnimal();
+
+		void	makeSound(void) const;
+		std::string	getType(void) const;
+	protected :
+		std::string		_type;
 };
 
 #endif

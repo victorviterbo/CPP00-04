@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/10 13:31:32 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/18 10:59:51 by vviterbo         ###   ########.fr       */
+/*   Created: 2025/07/18 12:52:41 by vviterbo          #+#    #+#             */
+/*   Updated: 2025/07/18 13:30:38 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
-
+#pragma once
 
 # include <cstdio>
 # include <iostream>
@@ -20,22 +18,21 @@
 # include <sstream>
 # include <string>
 
-class ClapTrap {
+class Brain {
 	public :
-		ClapTrap();
-		ClapTrap(std::string name);
-		ClapTrap(ClapTrap &other);
-		ClapTrap &operator=(ClapTrap &operand);
-		~ClapTrap();
-		
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		Brain();
+		Brain(Brain &other);
+		Brain &operator=(Brain &operand);
+		~Brain();
+
+		void	newIdea(std::string idea);
+		void	newIdea(std::string idea, int index);
+		std::string &getIdea();
+		std::string &getIdea(int index);
+		void	popIdea();
+		void	popIdea(int index);
 	private :
-		std::string		_name;
-		unsigned int	_hp;
-		unsigned int	_ep;
-		unsigned int	_damages;
+		std::string	_ideas[100];
+		int			_idx;
 };
 
-#endif

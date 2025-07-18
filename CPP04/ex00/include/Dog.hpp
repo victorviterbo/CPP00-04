@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:31:32 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/18 10:59:51 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/10 15:08:18 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
 
 # include <cstdio>
@@ -20,22 +20,17 @@
 # include <sstream>
 # include <string>
 
-class ClapTrap {
+# include "Animal.hpp"
+
+class Dog : virtual public Animal {
 	public :
-		ClapTrap();
-		ClapTrap(std::string name);
-		ClapTrap(ClapTrap &other);
-		ClapTrap &operator=(ClapTrap &operand);
-		~ClapTrap();
-		
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-	private :
-		std::string		_name;
-		unsigned int	_hp;
-		unsigned int	_ep;
-		unsigned int	_damages;
+		Dog();
+		Dog(std::string name);
+		Dog(Dog &other);
+		Dog &operator=(Dog &operand);
+		~Dog();
+
+		void	makeSound(void) const;
 };
 
 #endif

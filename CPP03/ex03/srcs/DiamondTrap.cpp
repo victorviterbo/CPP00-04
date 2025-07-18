@@ -18,16 +18,13 @@ DiamondTrap::DiamondTrap()
 	this->setStats(100, 50, 20);
 }
 
-DiamondTrap::DiamondTrap(std::string name) : FragTrap(name.append("_clap_name")) //ScavTrap(name.append("_clap_name"))//
+DiamondTrap::DiamondTrap(std::string name) : FragTrap(name.append("_clap_name"))
 {
 	ScavTrap	Scav("dummy");
-	//FragTrap	Frag("dummy");
 
 	std::cout << "Parametrized DiamondTrap Constructor Called" << std::endl;
 	this->_name = name;
-	//this->setHp(Frag.getHp());
 	this->setEp(Scav.getEp());
-	//this->setDamages(Frag.getDamages());
 	return ;
 }
 

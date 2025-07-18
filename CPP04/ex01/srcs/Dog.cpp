@@ -6,19 +6,19 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:37:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/18 14:44:41 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/18 14:48:42 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal(), _brain(new Brain())
+Dog::Dog() : Animal()
 {
 	std::cout << "Unparametrized Dog Constructor Called" << std::endl;
 	this->_type = "Dog";
 }
 
-Dog::Dog(std::string name) : Animal(), _brain(new Brain())
+Dog::Dog(std::string name) : Animal()
 {
 	std::cout << "Parametrized Dog Constructor Called" << std::endl;
 	this->_type = name;

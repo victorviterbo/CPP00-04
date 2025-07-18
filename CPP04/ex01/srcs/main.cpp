@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 15:24:15 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/18 14:46:19 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/18 14:49:23 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 int	main(void)
 {
-	const int 	farm_size = 2;
+	const int 	farm_size = 6;
 	Animal 		*farm[farm_size];
 
 	for (int i = 0; i < farm_size / 2; i++)

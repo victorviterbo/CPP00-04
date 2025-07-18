@@ -12,14 +12,14 @@
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal(), _brain(new Brain())
+Cat::Cat() : Animal()
 {
 	std::cout << "Unparametrized Cat Constructor Called" << std::endl;
 	this->_type = "Cat";
 	
 }
 
-Cat::Cat(std::string name) : Animal(name), _brain(new Brain())
+Cat::Cat(std::string name) : Animal(name)
 {
 	std::cout << "Parametrized Cat Constructor Called" << std::endl;
 	this->_type = "Cat";

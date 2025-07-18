@@ -23,10 +23,10 @@ DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name.append("_claptrap_nam
 	std::cout << "Parametrized DiamondTrap Constructor Called" << std::endl;
 	//this->setHp(this->ScavTrap::getHp());
 	this->_name = name;
-	this->setHp(ScavTrap::getHp());
-	this->setEp(FragTrap::getEp());
-	std::cout << "WTF : " << FragTrap::getEp() << std::endl;
-	this->setDamages(ScavTrap::getDamages());
+	this->setHp(FragTrap::getHp());
+	this->setEp(ScavTrap::getEp());
+	std::cout << "WTF : " << ScavTrap::getEp() << std::endl;
+	this->setDamages(FragTrap::getDamages());
 	return ;
 }
 

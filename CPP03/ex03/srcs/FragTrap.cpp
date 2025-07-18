@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 16:45:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/13 14:19:23 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/16 12:08:12 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ FragTrap::FragTrap()
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "Parametrized FragTrap Constructor Called" << std::endl;
+	this->setStats(100, 100, 30);
 	return ;
 }
 

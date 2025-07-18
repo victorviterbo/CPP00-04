@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 15:24:15 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/13 14:38:07 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/18 10:13:32 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	main(void)
 	player1 = player3;
 	std::cout << "HP : " << player1.getHp() << ", Ep : " << player1.getEp() << ", dmgs : " << player1.getDamages() << std::endl;
 	player1.attack("some other player");
-	return (0);
 	std::cout << "Fourmi attacks Conan" << std::endl;
 	player1.attack("ConanLeB");
 	std::cout << "Fourmi is attacked 9" << std::endl;
@@ -51,4 +50,6 @@ int	main(void)
 	player3.beRepaired(1000);
 	player3.beRepaired(1);
 	player3.highFivesGuys();
+	player2.whoAmI();
+	player3.whoAmI();
 }

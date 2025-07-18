@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 16:45:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/11 13:39:44 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/18 10:11:38 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap Destructor Called" << std::endl;
 }
+
 void 	ScavTrap::attack(const std::string& target)
 {
 	if (!this->getHp())

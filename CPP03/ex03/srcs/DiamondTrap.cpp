@@ -18,15 +18,16 @@ DiamondTrap::DiamondTrap()
 	this->setStats(100, 50, 20);
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name.append("_claptrap_name")), FragTrap(name.append("_claptrap_name"))
+DiamondTrap::DiamondTrap(std::string name) : FragTrap(name.append("_clap_name")) //ScavTrap(name.append("_clap_name"))//
 {
+	ScavTrap	Scav("dummy");
+	//FragTrap	Frag("dummy");
+
 	std::cout << "Parametrized DiamondTrap Constructor Called" << std::endl;
-	//this->setHp(this->ScavTrap::getHp());
 	this->_name = name;
-	this->setHp(FragTrap::getHp());
-	this->setEp(ScavTrap::getEp());
-	std::cout << "WTF : " << ScavTrap::getEp() << std::endl;
-	this->setDamages(FragTrap::getDamages());
+	//this->setHp(Frag.getHp());
+	this->setEp(Scav.getEp());
+	//this->setDamages(Frag.getDamages());
 	return ;
 }
 
@@ -46,23 +47,8 @@ DiamondTrap::~DiamondTrap()
 {
 	std::cout << "DiamondTrap Destructor Called" << std::endl;
 }
-
-void 	DiamondTrap::attack(const std::string& target)
+void	DiamondTrap::whoAmI(void)
 {
-	if (!this->getHp())
-	{
-		std::cout << "DiamondTrap " << this->getName() << ": attack on " << target \
-		<< " aborted: not enough hp" << std::endl;
-		return ;
-	}
-	if (!this->getEp())
-	{
-		std::cout << "DiamondTrap " << this->getName() << ": attack on " << target \
-		<< " aborted: not enough ep" << std::endl;
-		return ;
-	}
-	this->setEp(this->getEp() - 1);
-	std::cout << "DiamondTrap " << this->getName() << " attacks " << target \
-	<< ", causing " << this->getDamages() << " points of damage!" << std::endl;
-	return ;
+	std::cout << "DiamondTrap name : " << this->_name << std::endl;
+	std::cout << "ClapTrap name : " << this->getName() << std::endl;
 }

@@ -12,14 +12,14 @@
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal()
+Cat::Cat() : Animal(), _brain(new Brain())
 {
 	std::cout << "Unparametrized Cat Constructor Called" << std::endl;
 	this->_type = "Cat";
 	
 }
 
-Cat::Cat(std::string name) : Animal(name)
+Cat::Cat(std::string name) : Animal(name), _brain(new Brain())
 {
 	std::cout << "Parametrized Cat Constructor Called" << std::endl;
 	this->_type = "Cat";
@@ -29,12 +29,14 @@ Cat::Cat(Cat &other)
 {
 	std::cout << "Cat Copy Constructor Called" << std::endl;
 	this->_type = other._type;
+	this->_brain = other._brain;
 }
 
 Cat &Cat::operator=(Cat &operand)
 {
 	std::cout << "Cat Assignment Operator Called" << std::endl;
 	this->_type = operand._type;
+	this->_brain = operand._brain;
 	return (*this);
 }
 

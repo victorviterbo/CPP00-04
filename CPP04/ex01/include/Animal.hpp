@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 10:35:14 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/18 13:44:20 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/18 14:42:16 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 # include <sstream>
 # include <string>
 
-#include "Brain.hpp"
-
 class Animal {
 	public :
 		Animal();
@@ -34,7 +32,6 @@ class Animal {
 		std::string	getType(void) const;
 	protected :
 		std::string		_type;
-		Brain			*_brain;
 };
 
 #endif

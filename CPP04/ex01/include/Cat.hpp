@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 10:35:01 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/18 11:09:51 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/18 14:44:04 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@
 # include <string>
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
-class Cat : virtual public Animal {
+class Cat : virtual public Animal, virtual public Brain {
 	public :
 		Cat();
 		Cat(std::string name);
@@ -30,6 +31,8 @@ class Cat : virtual public Animal {
 		~Cat();
 
 		void	makeSound(void) const;
+	private :
+		Brain			*_brain;
 };
 
 #endif

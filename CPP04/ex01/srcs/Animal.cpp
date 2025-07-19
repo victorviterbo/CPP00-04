@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:37:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/19 14:18:30 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/19 16:18:35 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ Animal::Animal(Animal &other)
 Animal &Animal::operator=(Animal &operand)
 {
 	std::cout << "Animal Assignment Operator Called" << std::endl;
-	std::cout << "is that the pb ?" << operand._type << std::endl; 
 	this->_type = operand._type;
-	std::cout << "ok ?" << std::endl;
 	return (*this);
 }
 

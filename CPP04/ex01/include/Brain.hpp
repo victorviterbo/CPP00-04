@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 12:52:41 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/18 13:30:38 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/19 16:48:02 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ class Brain {
 		~Brain();
 
 		void	newIdea(std::string idea);
-		void	newIdea(std::string idea, int index);
-		std::string &getIdea();
-		std::string &getIdea(int index);
+		void	newIdea(std::string idea, unsigned int index);
+		void	getIdea();
+		std::string &getIdea(unsigned int index);
 		void	popIdea();
-		void	popIdea(int index);
+		void	popIdea(unsigned int index);
 	private :
-		std::string	_ideas[100];
-		int			_idx;
+		std::string		_ideas[100];
+		unsigned int	_idx;
 };
 

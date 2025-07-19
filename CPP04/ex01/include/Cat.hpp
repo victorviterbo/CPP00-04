@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 10:35:01 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/19 14:04:56 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/19 17:10:31 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include "Animal.hpp"
 # include "Brain.hpp"
 
-class Cat : virtual public Animal, virtual public Brain {
+class Cat : virtual public Animal {
 	public :
 		Cat();
 		Cat(std::string name);
@@ -32,6 +32,7 @@ class Cat : virtual public Animal, virtual public Brain {
 
 		void	makeSound(void) const;
 		Brain*	getBrain(void);
+		void	getTypicalCatThought(void);
 	private :
 		Brain	*_brain;
 };

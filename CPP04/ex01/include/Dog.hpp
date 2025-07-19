@@ -23,7 +23,7 @@
 # include "Animal.hpp"
 # include "Brain.hpp"
 
-class Dog : virtual public Animal, virtual public Brain {
+class Dog : virtual public Animal {
 	public :
 		Dog();
 		Dog(std::string name);

@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 10:35:14 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/19 14:01:03 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/19 15:47:05 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
-
 
 # include <cstdio>
 # include <iostream>
@@ -27,7 +26,7 @@ class Animal {
 		Animal();
 		Animal(std::string name);
 		Animal(Animal &other);
-		Animal &operator=(Animal &operand);
+		virtual Animal &operator=(Animal &operand);
 		virtual ~Animal();
 
 		virtual void	makeSound(void) const;

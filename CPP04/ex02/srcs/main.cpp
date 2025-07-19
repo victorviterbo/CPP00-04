@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 15:24:15 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/19 13:27:10 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/19 13:41:49 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	main(void)
 
 	for (int i = 0; i < farm_size / 2; i++)
 		farm[i] = new Dog();
-	std::cout << "coucou" << std::endl;
 	for (int i = farm_size / 2; i < farm_size; i++)
 		farm[i] = new Cat();
 	

@@ -6,19 +6,19 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:37:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/18 14:48:42 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/19 14:22:10 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal()
+Dog::Dog() : Animal(), _brain(new Brain())
 {
 	std::cout << "Unparametrized Dog Constructor Called" << std::endl;
 	this->_type = "Dog";
 }
 
-Dog::Dog(std::string name) : Animal()
+Dog::Dog(std::string name) : Animal(), _brain(new Brain())
 {
 	std::cout << "Parametrized Dog Constructor Called" << std::endl;
 	this->_type = name;
@@ -42,9 +42,15 @@ Dog &Dog::operator=(Dog &operand)
 Dog::~Dog()
 {
 	std::cout << "Dog Destructor Called" << std::endl;
+	delete this->_brain;
 }
 
 void	Dog::makeSound(void) const
 {
 	std::cout << "Bark Bark ! says the dog ..." << std::endl;
+}
+
+Brain	*Dog::getBrain(void)
+{
+	return (this->_brain);
 }

@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 15:24:15 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/19 13:19:21 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/19 14:19:50 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,14 @@ int	main(void)
 	farm[1]->setType("StBernard");
 	std::cout << "Dog 1 type " << farm[1]->getType() << std::endl;
 	std::cout << "Dog 2 type " << farm[2]->getType() << std::endl;
+	farm[1]->getBrain()->newIdea("eat !");
+	std::cout << farm[1]->getBrain()->getIdea() << std::endl;
+	farm[0] = new Dog();
+	*farm[0] = *farm[1];
+	std::cout << farm[0]->getBrain()->getIdea() << std::endl;
+	farm[1]->getBrain()->newIdea("sleep !");
+	std::cout << farm[1]->getBrain()->getIdea() << std::endl;
+	std::cout << farm[0]->getBrain()->getIdea() << std::endl;
 	farm[3]->makeSound();
 	for (int i = 1; i < farm_size; i++)
 		delete farm[i];

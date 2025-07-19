@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 10:35:01 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/18 14:44:04 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/19 14:04:56 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ class Cat : virtual public Animal, virtual public Brain {
 		~Cat();
 
 		void	makeSound(void) const;
+		Brain*	getBrain(void);
 	private :
-		Brain			*_brain;
+		Brain	*_brain;
 };
 
 #endif

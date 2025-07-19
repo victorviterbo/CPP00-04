@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:37:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/19 13:19:35 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/19 14:18:30 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ Animal::Animal(Animal &other)
 Animal &Animal::operator=(Animal &operand)
 {
 	std::cout << "Animal Assignment Operator Called" << std::endl;
+	std::cout << "is that the pb ?" << operand._type << std::endl; 
 	this->_type = operand._type;
+	std::cout << "ok ?" << std::endl;
 	return (*this);
 }
 

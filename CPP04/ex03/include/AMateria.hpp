@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wrongwrongCat.hpp                                       :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/18 10:35:01 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/18 11:09:43 by vviterbo         ###   ########.fr       */
+/*   Created: 2025/07/19 13:30:31 by vviterbo          #+#    #+#             */
+/*   Updated: 2025/07/19 13:35:38 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-# define WRONGCAT_HPP
+#pragma once
 
-# include <cstdio>
-# include <iostream>
-# include <iomanip>
-# include <sstream>
-# include <string>
+#include <cstdio>
+#include <iostream>
+#include <iomanip>
+#include <sstream>
+#include <string>
 
-# include "wrongAnimal.hpp"
-
-class wrongCat : public wrongAnimal {
-	public :
-		wrongCat();
-		wrongCat(std::string name);
-		wrongCat(wrongCat &other);
-		wrongCat &operator=(wrongCat &operand);
-		~wrongCat();
-
-		void	makeSound(void) const;
+class AMateria {
+	protected:
+		std::string	_type;
+	public:
+		AMateria(std::string const & type);
+		std::string const & getType() const; //Returns the materia type
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
 };
-
-#endif

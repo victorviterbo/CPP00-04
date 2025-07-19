@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 12:52:20 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/18 14:38:31 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/19 14:10:17 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ Brain &Brain::operator=(Brain &operand)
 {
 	std::cout << "Brain Assignment operator Called" << std::endl;
 	for (int i = 0; i < operand._idx; i++)
+	{
 		this->_ideas[i] = operand._ideas[i];
+		std::cout << "copying idea " << i << std::endl;
+	}
 	this->_idx = operand._idx;
 	return (*this);
 }
@@ -53,7 +56,7 @@ void	Brain::newIdea(std::string idea, int index)
 
 std::string &Brain::getIdea()
 {
-	return (this->_ideas[this->_idx]);
+	return (this->_ideas[this->_idx - 1]);
 }
 
 std::string &Brain::getIdea(int index)

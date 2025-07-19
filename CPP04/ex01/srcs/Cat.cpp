@@ -12,14 +12,14 @@
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal()
+Cat::Cat() : Animal(), _brain(new Brain())
 {
 	std::cout << "Unparametrized Cat Constructor Called" << std::endl;
 	this->_type = "Cat";
 	
 }
 
-Cat::Cat(std::string name) : Animal(name)
+Cat::Cat(std::string name) : Animal(name), _brain(new Brain())
 {
 	std::cout << "Parametrized Cat Constructor Called" << std::endl;
 	this->_type = "Cat";
@@ -43,9 +43,15 @@ Cat &Cat::operator=(Cat &operand)
 Cat::~Cat()
 {
 	std::cout << "Cat Destructor Called" << std::endl;
+	delete this->_brain;
 }
 
 void	Cat::makeSound(void) const
 {
 	std::cout << "Meow Meow ! says the cat ..." << std::endl;
+}
+
+Brain	*Cat::getBrain(void)
+{
+	return (this->_brain);
 }

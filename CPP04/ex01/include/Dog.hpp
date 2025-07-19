@@ -32,8 +32,9 @@ class Dog : virtual public Animal, virtual public Brain {
 		~Dog();
 
 		void	makeSound(void) const;
+		Brain*	getBrain(void);
 	private :
-		Brain			*_brain;
+		Brain	*_brain;
 };
 
 #endif

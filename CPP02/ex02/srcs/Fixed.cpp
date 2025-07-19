@@ -12,26 +12,38 @@
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() : _int(0) {}
+Fixed::Fixed() : _int(0)
+{
+	std::cout << "Fixed Constructor Called" << std::endl;
+}
 
 
 Fixed::Fixed(const int num)
 {
+	std::cout << "Fixed Int Constructor Called" << std::endl;
 	this->_int = num << this->_fb;
 	return ;
 }
 Fixed::Fixed(const float num)
 {
+	std::cout << "Fixed Float Constructor Called" << std::endl;
 	this->_int = roundf(num * (1 << this->_fb));
 	return ;
 }
 
-Fixed::~Fixed() {}
+Fixed::~Fixed()
+{
+	std::cout << "Fixed Destructor Called" << std::endl;
+}
 
-Fixed::Fixed(const Fixed &num) : _int(num._int) {}
+Fixed::Fixed(const Fixed &num) : _int(num._int)
+{
+	std::cout << "Fixed Copy Constructor Called" << std::endl;
+}
 
 Fixed &Fixed::operator=(const Fixed &operand)
 {
+	std::cout << "Fixed Assignment Operator Called" << std::endl;
 	this->_int = operand._int;
 	return (*this); 
 }

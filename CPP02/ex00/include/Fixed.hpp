@@ -11,26 +11,24 @@
 /* ************************************************************************** */
 
 
-#ifndef FP_HPP
-# define FP_HPP
+#pragma once
 
-# include <cstdio>
-# include <iostream>
-# include <iomanip>
-# include <sstream>
-# include <string>
+#include <cstdio>
+#include <iostream>
+#include <iomanip>
+#include <sstream>
+#include <string>
 
 class Fixed {
-    public :
-        Fixed();
-        ~Fixed();
-        Fixed(const Fixed &num);
-        Fixed &operator=(const Fixed &operand);
-        int getRawBits(void);
-        void setRawBits(int const raw);
-    private :
-        int                 _int;
-        static const int    _fb = 8;
-};
+	public :
+		Fixed();
+		Fixed(const Fixed &num);
+		Fixed &operator=(const Fixed &operand);
+		~Fixed();
 
-#endif
+		int     getRawBits(void);
+		void    setRawBits(int const raw);
+	private :
+		int                 _int;
+		static const int    _fb = 8;
+};

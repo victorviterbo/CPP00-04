@@ -6,7 +6,7 @@
 /*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 22:01:27 by victorviter       #+#    #+#             */
-/*   Updated: 2025/07/09 21:13:11 by victorviter      ###   ########.fr       */
+/*   Updated: 2025/07/19 18:15:09 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,20 @@ int main( void )
 
     while (p.getPointX() < max)
     {
-        p.setPoint(p.getPointX().toFloat(), 0);
+        p.setPointY(0);
         while (p.getPointY() < max)
         {
             if (bsp(a, b, c, p))
                 std::cout << "X";
             else
                 std::cout << ".";
-            p.incr_y();
-            p.incr_y();
-            p.incr_y();
+            p.getPointY()++;
+            p.getPointY()++;
+            p.getPointY()++;
         }
-        p.incr_x();
-        p.incr_x();
-        p.incr_x();
+        p.getPointX()++;
+        p.getPointX()++;
+        p.getPointX()++;
         std::cout << std::endl;
     }
     return 0;

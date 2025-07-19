@@ -22,20 +22,21 @@
 #include <cmath>
 
 class Fixed {
-    public :
-        Fixed();
-        Fixed(const int num);
-        Fixed(const float num);
-        ~Fixed();
-        Fixed(const Fixed &num);
-        Fixed &operator=(const Fixed &operand);
-        int getRawBits(void);
-        void setRawBits(int const raw);
-        float   toFloat(void) const;
-        int     toInt(void) const;
-    private :
-        int                 _int;
-        static const int    _fb = 8;
+	public :
+		Fixed();
+		Fixed(const int num);
+		Fixed(const float num);
+		Fixed(const Fixed &num);
+		Fixed &operator=(const Fixed &operand);
+		~Fixed();
+
+		int		getRawBits(void);
+		void	setRawBits(int const raw);
+		float	toFloat(void) const;
+		int		toInt(void) const;
+	private :
+		int					_int;
+		static const int	_fb = 8;
 };
 
 std::ostream &operator<<(std::ostream &os, const Fixed &operand);

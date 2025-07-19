@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 17:01:45 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/08 17:49:35 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/19 18:10:57 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsp.hpp"
 
-Fixed	crossprod(const Point a, const Point b, const Point p)
+Fixed	crossprod(Point &a, Point &b, Point &p)
 {
 	Fixed cross;
 
@@ -21,7 +21,7 @@ Fixed	crossprod(const Point a, const Point b, const Point p)
 	return (cross);
 }
 
-bool	bsp(Point const a, Point const b, Point const c, Point const point)
+bool	bsp(Point &a, Point &b, Point &c, Point &point)
 {
 	Fixed	zero(0);
 	Fixed	cross_prods[3];

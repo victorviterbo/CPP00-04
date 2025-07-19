@@ -17,7 +17,6 @@ Fixed::Fixed() : _int(0)
 	std::cout << "Fixed Constructor Called" << std::endl;
 }
 
-
 Fixed::Fixed(const int num)
 {
 	std::cout << "Fixed Int Constructor Called" << std::endl;
@@ -31,11 +30,6 @@ Fixed::Fixed(const float num)
 	return ;
 }
 
-Fixed::~Fixed()
-{
-	std::cout << "Fixed Destructor Called" << std::endl;
-}
-
 Fixed::Fixed(const Fixed &num) : _int(num._int)
 {
 	std::cout << "Fixed Copy Constructor Called" << std::endl;
@@ -46,6 +40,11 @@ Fixed &Fixed::operator=(const Fixed &operand)
 	std::cout << "Fixed Assignment Operator Called" << std::endl;
 	this->_int = operand._int;
 	return (*this); 
+}
+
+Fixed::~Fixed()
+{
+	std::cout << "Fixed Destructor Called" << std::endl;
 }
 
 Fixed Fixed::operator+(const Fixed &operand) const
@@ -147,7 +146,7 @@ bool Fixed::operator>(const Fixed &operand) const
 
 bool Fixed::operator>=(const Fixed &operand) const
 {
-	if (this->_int > operand._int)
+	if (this->_int >= operand._int)
 		return (true);
 	return (false);
 }

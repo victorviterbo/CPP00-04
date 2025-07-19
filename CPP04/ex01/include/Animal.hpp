@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 10:35:14 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/18 14:42:16 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/19 13:19:41 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Animal {
 
 		virtual void	makeSound(void) const;
 		std::string	getType(void) const;
+		void		setType(std::string type);
 	protected :
 		std::string		_type;
 };

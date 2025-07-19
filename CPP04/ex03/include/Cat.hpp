@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/18 10:35:14 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/19 13:24:30 by vviterbo         ###   ########.fr       */
+/*   Created: 2025/07/18 10:35:01 by vviterbo          #+#    #+#             */
+/*   Updated: 2025/07/18 11:09:51 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
-
+#ifndef CAT_HPP
+# define CAT_HPP
 
 # include <cstdio>
 # include <iostream>
@@ -20,21 +19,17 @@
 # include <sstream>
 # include <string>
 
-#include "Brain.hpp"
+# include "Animal.hpp"
 
-class Animal {
+class Cat : virtual public Animal {
 	public :
-		Animal();
-		Animal(std::string name);
-		Animal(Animal &other);
-		Animal &operator=(Animal &operand);
-		virtual ~Animal() = 0;
+		Cat();
+		Cat(std::string name);
+		Cat(Cat &other);
+		Cat &operator=(Cat &operand);
+		~Cat();
 
-		virtual void	makeSound(void) const;
-		std::string	getType(void) const;
-	protected :
-		std::string		_type;
-		Brain			*_brain;
+		void	makeSound(void) const;
 };
 
 #endif

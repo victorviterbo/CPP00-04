@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:37:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/18 14:17:36 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/19 13:27:30 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ Animal::~Animal()
 	std::cout << "Animal Destructor Called" << std::endl;
 	delete this->_brain;
 }
+
 
 void	Animal::makeSound(void) const
 {

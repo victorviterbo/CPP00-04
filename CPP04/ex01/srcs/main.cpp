@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 15:24:15 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/18 14:49:23 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/19 13:19:21 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ int	main(void)
 		farm[i] = new Cat();
 	delete farm[0];
 	farm[1]->makeSound();
+	farm[1]->setType("StBernard");
+	std::cout << "Dog 1 type " << farm[1]->getType() << std::endl;
+	std::cout << "Dog 2 type " << farm[2]->getType() << std::endl;
 	farm[3]->makeSound();
 	for (int i = 1; i < farm_size; i++)
 		delete farm[i];

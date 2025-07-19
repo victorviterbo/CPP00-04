@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:37:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/18 14:41:16 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/19 13:19:35 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,8 @@ void	Animal::makeSound(void) const
 std::string	Animal::getType(void) const
 {
 	return (this->_type);
+}
+void	Animal::setType(std::string type)
+{
+	this->_type = type;
 }

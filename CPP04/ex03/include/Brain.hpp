@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/18 10:35:14 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/19 13:24:30 by vviterbo         ###   ########.fr       */
+/*   Created: 2025/07/18 12:52:41 by vviterbo          #+#    #+#             */
+/*   Updated: 2025/07/18 13:30:38 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
-
+#pragma once
 
 # include <cstdio>
 # include <iostream>
@@ -20,21 +18,21 @@
 # include <sstream>
 # include <string>
 
-#include "Brain.hpp"
-
-class Animal {
+class Brain {
 	public :
-		Animal();
-		Animal(std::string name);
-		Animal(Animal &other);
-		Animal &operator=(Animal &operand);
-		virtual ~Animal() = 0;
+		Brain();
+		Brain(Brain &other);
+		Brain &operator=(Brain &operand);
+		~Brain();
 
-		virtual void	makeSound(void) const;
-		std::string	getType(void) const;
-	protected :
-		std::string		_type;
-		Brain			*_brain;
+		void	newIdea(std::string idea);
+		void	newIdea(std::string idea, int index);
+		std::string &getIdea();
+		std::string &getIdea(int index);
+		void	popIdea();
+		void	popIdea(int index);
+	private :
+		std::string	_ideas[100];
+		int			_idx;
 };
 
-#endif

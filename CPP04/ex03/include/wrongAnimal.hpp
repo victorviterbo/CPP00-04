@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   wrongAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 10:35:14 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/19 13:24:30 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/18 11:07:11 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 
 # include <cstdio>
@@ -20,21 +20,18 @@
 # include <sstream>
 # include <string>
 
-#include "Brain.hpp"
-
-class Animal {
+class wrongAnimal {
 	public :
-		Animal();
-		Animal(std::string name);
-		Animal(Animal &other);
-		Animal &operator=(Animal &operand);
-		virtual ~Animal() = 0;
+		wrongAnimal();
+		wrongAnimal(std::string name);
+		wrongAnimal(wrongAnimal &other);
+		wrongAnimal &operator=(wrongAnimal &operand);
+		~wrongAnimal();
 
-		virtual void	makeSound(void) const;
+		void	makeSound(void) const;
 		std::string	getType(void) const;
 	protected :
 		std::string		_type;
-		Brain			*_brain;
 };
 
 #endif

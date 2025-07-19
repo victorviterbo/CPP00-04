@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:37:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/19 13:27:30 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/19 16:18:35 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal() : _brain(new Brain())
+Animal::Animal()
 {
 	std::cout << "Unparametrized Animal Constructor Called" << std::endl;
 	this->_type = "Random Animal";
@@ -40,9 +40,7 @@ Animal &Animal::operator=(Animal &operand)
 Animal::~Animal()
 {
 	std::cout << "Animal Destructor Called" << std::endl;
-	delete this->_brain;
 }
-
 
 void	Animal::makeSound(void) const
 {
@@ -52,4 +50,8 @@ void	Animal::makeSound(void) const
 std::string	Animal::getType(void) const
 {
 	return (this->_type);
+}
+void	Animal::setType(std::string type)
+{
+	this->_type = type;
 }

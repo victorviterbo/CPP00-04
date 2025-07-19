@@ -21,6 +21,7 @@
 # include <string>
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Dog : virtual public Animal {
 	public :
@@ -31,6 +32,9 @@ class Dog : virtual public Animal {
 		~Dog();
 
 		void	makeSound(void) const;
+		Brain*	getBrain(void);
+	private :
+		Brain	*_brain;
 };
 
 #endif

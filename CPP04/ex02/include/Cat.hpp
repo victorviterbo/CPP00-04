@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 10:35:01 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/18 11:09:51 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/19 17:10:31 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <string>
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Cat : virtual public Animal {
 	public :
@@ -30,6 +31,10 @@ class Cat : virtual public Animal {
 		~Cat();
 
 		void	makeSound(void) const;
+		Brain*	getBrain(void);
+		void	getTypicalCatThought(void);
+	private :
+		Brain	*_brain;
 };
 
 #endif

@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
+#    By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/05 15:40:14 by vviterbo          #+#    #+#              #
-#    Updated: 2025/07/19 13:28:17 by vviterbo         ###   ########.fr        #
+#    Updated: 2025/07/19 17:28:48 by victorviter      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = AbstractAnimal
+NAME = AbstractClass
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
 

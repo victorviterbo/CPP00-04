@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:37:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/11 13:18:16 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/21 11:15:12 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ ClapTrap::ClapTrap(ClapTrap &other) :_name(other._name), _hp(other._hp), _ep(oth
 
 ClapTrap &ClapTrap::operator=(ClapTrap &operand)
 {
+	std::cout << "Assignement operator Called" << std::endl;
 	this->_name = operand._name;
 	this->_hp = operand._hp;
 	this->_ep = operand._ep;
 	this->_damages = operand._damages;
-	std::cout << "Assignement operator Called" << std::endl;
 	return (*this);
 }
 

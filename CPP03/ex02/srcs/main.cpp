@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 15:24:15 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/11 15:57:27 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/21 12:13:53 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ int	main(void)
 	FragTrap	player1;
 	FragTrap	player2("ConanLeB");
 	FragTrap	player3("CptnFourmi");
-	FragTrap	player4(player2);
+	//FragTrap	player4(player2);
+	ClapTrap	player4(player2);
 
+	std::cout << std::endl << "Initialisation finished" << std::endl << std::endl;
 	player1 = player3;
 	std::cout << "Fourmi attacks Conan" << std::endl;
 	player1.attack("ConanLeB");
@@ -43,4 +45,5 @@ int	main(void)
 	player3.beRepaired(1000);
 	player3.beRepaired(1);
 	player3.highFivesGuys();
+	player4.takeDamage(9);
 }

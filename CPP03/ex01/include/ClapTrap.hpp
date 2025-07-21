@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:31:32 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/21 11:29:22 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/21 17:03:51 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class ClapTrap {
 		void			setEp(unsigned int ep);
 		void			setDamages(unsigned int damages);
 		void			setStats(unsigned int hp, unsigned int ep, unsigned int dmgs);
-	private :
+	protected :
 		std::string		_name;
 		unsigned int	_hp;
 		unsigned int	_ep;

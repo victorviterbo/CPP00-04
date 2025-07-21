@@ -6,22 +6,26 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 16:45:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/11 13:39:44 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/21 17:08:06 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap() : ClapTrap()
 {
 	std::cout << "Unparametrized ScavTrap Constructor Called" << std::endl;
-	this->setStats(100, 50, 20);
+	this->_hp = 100;
+	this->_ep = 50;
+	this->_damages = 20;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "Parametrized ScavTrap Constructor Called" << std::endl;
-	this->setStats(100, 50, 20);
+	this->_hp = 100;
+	this->_ep = 50;
+	this->_damages = 20;
 	return ;
 }
 

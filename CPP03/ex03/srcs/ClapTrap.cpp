@@ -6,14 +6,14 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:37:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/11 13:36:57 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/21 17:31:19 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 
-ClapTrap::ClapTrap() : _name(""), _hp(10), _ep(10), _damages(0)
+ClapTrap::ClapTrap() : _name("Unknown"), _hp(10), _ep(10), _damages(0)
 {
 	std::cout << "Unparametrized ClapTrap Constructor Called" << std::endl;
 }

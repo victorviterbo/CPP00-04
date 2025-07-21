@@ -12,23 +12,25 @@
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap()
+DiamondTrap::DiamondTrap() : ClapTrap("Unknown_clap_name"), ScavTrap(), FragTrap()
 {
 	std::cout << "Unparametrized DiamondTrap Constructor Called" << std::endl;
-	this->setStats(100, 50, 20);
+	this->_name = "Unknown";
+	this->_ep = ScavTrap::_ep;
+	return ;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : FragTrap(name.append("_clap_name"))
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap()
 {
-	ScavTrap	Scav("dummy");
-
 	std::cout << "Parametrized DiamondTrap Constructor Called" << std::endl;
+	ScavTrap	Scav;
+
 	this->_name = name;
 	this->setEp(Scav.getEp());
 	return ;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap &other) : ScavTrap(other), FragTrap(other)
+DiamondTrap::DiamondTrap(DiamondTrap &other) : ClapTrap(other), ScavTrap(other), FragTrap(other)
 {
 	std::cout << "DiamondTrap Copy Constructor Called" << std::endl;
 }

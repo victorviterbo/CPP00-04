@@ -6,22 +6,26 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 16:45:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/11 13:39:44 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/21 17:30:18 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap() : ClapTrap()
 {
 	std::cout << "Unparametrized ScavTrap Constructor Called" << std::endl;
-	this->setStats(100, 50, 20);
+	this->_hp = 100;
+	this->_ep = 50;
+	this->_damages = 20;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "Parametrized ScavTrap Constructor Called" << std::endl;
-	this->setStats(100, 50, 20);
+	this->_hp = 100;
+	this->_ep = 50;
+	this->_damages = 20;
 	return ;
 }
 
@@ -43,21 +47,21 @@ ScavTrap::~ScavTrap()
 }
 void 	ScavTrap::attack(const std::string& target)
 {
-	if (!this->getHp())
+	if (!this->_hp)
 	{
 		std::cout << "ScavTrap " << this->getName() << ": attack on " << target \
 		<< " aborted: not enough hp" << std::endl;
 		return ;
 	}
-	if (!this->getEp())
+	if (!this->_ep)
 	{
 		std::cout << "ScavTrap " << this->getName() << ": attack on " << target \
 		<< " aborted: not enough ep" << std::endl;
 		return ;
 	}
-	this->setEp(this->getEp() - 1);
+	this->_ep--;
 	std::cout << "ScavTrap " << this->getName() << " attacks " << target \
-	<< ", causing " << this->getDamages() << " points of damage!" << std::endl;
+	<< ", causing " << this->_damages << " points of damage!" << std::endl;
 	return ;
 }
 

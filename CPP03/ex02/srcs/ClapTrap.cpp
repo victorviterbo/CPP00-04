@@ -6,14 +6,14 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:37:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/11 16:04:14 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/21 17:09:57 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 
-ClapTrap::ClapTrap() : _name(""), _hp(10), _ep(10), _damages(0)
+ClapTrap::ClapTrap() : _name("Unknown"), _hp(10), _ep(10), _damages(0)
 {
 	std::cout << "Unparametrized ClapTrap Constructor Called" << std::endl;
 }
@@ -23,8 +23,7 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _damages(0
 	std::cout << "Parametrized ClapTrap Constructor Called" << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap &other) :_name(other._name), _hp(other._hp), \
-_ep(other._ep), _damages(other._damages)
+ClapTrap::ClapTrap(ClapTrap &other) :_name(other._name), _hp(other._hp), _ep(other._ep), _damages(other._damages)
 {
 	std::cout << "ClapTrap Copy Constructor Called" << std::endl;
 }
@@ -89,14 +88,13 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (!this->_ep)
 	{
-		std::cout << "ClapTrap " << this->_name  << " does not have the \
-		energy to heal himself ! That lazy bum..." << std::endl;
+		std::cout << "ClapTrap " << this->_name  << " does not have the energy to heal himself ! ";
+		std::cout << "That lazy bum..." << std::endl;
 		return ;
 	}
 	this->_ep -= 1;
 	this->_hp += amount;
-	std::cout << "ClapTrap " << this->_name  << " healed himself by " << amount \
-	<< " hp and has now " << this->_hp << " hp" << std::endl;
+	std::cout << "ClapTrap " << this->_name  << " healed himself by " << amount << " hp and has now " << this->_hp << " hp" << std::endl;
 	return ;
 }
 

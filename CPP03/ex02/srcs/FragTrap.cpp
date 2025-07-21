@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 16:45:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/21 12:10:25 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/21 17:20:23 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,17 @@
 FragTrap::FragTrap()
 {
 	std::cout << "Unparametrized FragTrap Constructor Called" << std::endl;
-	this->setStats(100, 100, 30);
+	this->_hp = 100;
+	this->_ep = 100;
+	this->_damages = 30;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "Parametrized FragTrap Constructor Called" << std::endl;
-	this->setStats(100, 100, 30);
+	this->_hp = 100;
+	this->_ep = 100;
+	this->_damages = 30;
 	return ;
 }
 

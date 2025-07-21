@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:31:32 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/13 15:13:47 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/21 17:33:09 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class FragTrap : virtual public ClapTrap {
 		FragTrap &operator=(FragTrap &operand);
 		~FragTrap();
 
-		void 	attack(const std::string& target);
 		void	highFivesGuys(void);
 };
 

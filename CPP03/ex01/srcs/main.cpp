@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 15:24:15 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/21 11:57:11 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/21 17:06:54 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 
 int	main(void)
 {
-	ClapTrap	player1;
+	ScavTrap	player1;
 	ScavTrap	player2("ConanLeB");
 	ScavTrap	player3("CptnFourmi");
 	ScavTrap	player4(player2);
 
 	std::cout << std::endl << "Initialisation finished" << std::endl << std::endl;
+	std::cout << "HP : " << player2.getHp() << ", Ep : " << player2.getEp() << ", dmgs : " << player2.getDamages() << std::endl;
 	player1 = player3;
 	std::cout << "Fourmi attacks Conan" << std::endl;
 	player1.attack("ConanLeB");
@@ -42,5 +43,5 @@ int	main(void)
 	player3.beRepaired(1);
 	player3.beRepaired(1000);
 	player3.beRepaired(1);
-	player3.guardGate();
+	player2.guardGate();
 }

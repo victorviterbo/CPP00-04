@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 15:24:15 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/18 10:13:32 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/21 17:50:07 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,15 @@ int	main(void)
 	std::cout << "-----------------------------------" << std::endl;
 
 	player1 = player3;
+	player2.whoAmI();
+	player3.whoAmI();
 	std::cout << "HP : " << player1.getHp() << ", Ep : " << player1.getEp() << ", dmgs : " << player1.getDamages() << std::endl;
 	player1.attack("some other player");
 	std::cout << "Fourmi attacks Conan" << std::endl;
 	player1.attack("ConanLeB");
 	std::cout << "Fourmi is attacked 9" << std::endl;
 	player3.takeDamage(9);
-	std::cout << "Fourmi is attacked 10" << std::endl;
+	std::cout << "Fourmi is attacked 101" << std::endl;
 	player3.takeDamage(101);
 	std::cout << "Fourmi is attacked 1" << std::endl;
 	player3.takeDamage(1);
@@ -50,6 +52,5 @@ int	main(void)
 	player3.beRepaired(1000);
 	player3.beRepaired(1);
 	player3.highFivesGuys();
-	player2.whoAmI();
-	player3.whoAmI();
+	player2.guardGate();
 }

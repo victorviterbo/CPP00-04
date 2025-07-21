@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
+/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 16:45:18 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/16 12:08:12 by victorviter      ###   ########.fr       */
+/*   Updated: 2025/07/21 17:20:23 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,17 @@
 FragTrap::FragTrap()
 {
 	std::cout << "Unparametrized FragTrap Constructor Called" << std::endl;
-	this->setStats(100, 100, 30);
+	this->_hp = 100;
+	this->_ep = 100;
+	this->_damages = 30;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "Parametrized FragTrap Constructor Called" << std::endl;
-	this->setStats(100, 100, 30);
+	this->_hp = 100;
+	this->_ep = 100;
+	this->_damages = 30;
 	return ;
 }
 
@@ -40,25 +44,6 @@ FragTrap &FragTrap::operator=(FragTrap &operand)
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap Destructor Called" << std::endl;
-}
-void 	FragTrap::attack(const std::string& target)
-{
-	if (!this->getHp())
-	{
-		std::cout << "FragTrap " << this->getName() << ": attack on " << target \
-		<< " aborted: not enough hp" << std::endl;
-		return ;
-	}
-	if (!this->getEp())
-	{
-		std::cout << "FragTrap " << this->getName() << ": attack on " << target \
-		<< " aborted: not enough ep" << std::endl;
-		return ;
-	}
-	this->setEp(this->getEp() - 1);
-	std::cout << "FragTrap " << this->getName() << " attacks " << target \
-	<< ", causing " << this->getDamages() << " points of damage!" << std::endl;
-	return ;
 }
 
 void	FragTrap::highFivesGuys(void)

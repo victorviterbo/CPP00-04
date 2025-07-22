@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
+/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 13:35:08 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/21 19:08:23 by victorviter      ###   ########.fr       */
+/*   Updated: 2025/07/22 14:22:17 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	Character::unequip(int idx)
 	this->_inven_idx --;
 }
 
-void				use(int idx, ICharacter& target)
+void	use(int idx, ICharacter& target)
 {}
 
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Floor.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 15:54:30 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/22 16:23:01 by vviterbo         ###   ########.fr       */
+/*   Created: 2025/07/22 23:36:53 by victorviter       #+#    #+#             */
+/*   Updated: 2025/07/22 23:41:12 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,16 @@
 #include <string>
 
 #include "AMateria.hpp"
-#include "LList.hpp"
 
 class Floor {
-	public:
+	public :
 		Floor();
 		Floor(Floor &other);
-		Floor &operator=(Floor &other);
+		Floor operator=(Floor &other);
 		~Floor();
-
-		void	dropObj(AMateria *m);
-		void	mopFloor(void);
-	protected:
-		static LList	*_floor;
+		
+		void	dropFloor(AMateria *m);
+		void	mopFloor();
+	private :
+		static AMateria		*_floor[20];
 };

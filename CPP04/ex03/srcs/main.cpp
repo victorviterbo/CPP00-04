@@ -3,33 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 15:24:15 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/19 13:27:10 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/22 23:22:56 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "Brain.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "AMateria.hpp"
+#include "Character.hpp"
+#include "ICharacter.hpp"
+#include "MateriaSource.hpp"
+#include "IMateriaSource.hpp"
 
-#include "wrongAnimal.hpp"
-#include "wrongCat.hpp"
-
-int	main(void)
+int main()
 {
-	const int 	farm_size = 12;
-	Animal 		*farm[farm_size];
-	//const Animal* animal = new Animal();
-
-	for (int i = 0; i < farm_size / 2; i++)
-		farm[i] = new Dog();
-	std::cout << "coucou" << std::endl;
-	for (int i = farm_size / 2; i < farm_size; i++)
-		farm[i] = new Cat();
+	IMateriaSource* src = new MateriaSource();
 	
-	for (int i = 0; i < farm_size; i++)
-		delete farm[i];
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
+	
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	
+	ICharacter* bob = new Character("bob");
+	
+	me->use(0, *bob);
+	me->use(1, *bob);
+	delete bob;
+	delete me;
+	delete src;
+	return 0;
 }

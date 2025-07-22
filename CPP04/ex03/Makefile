@@ -3,21 +3,22 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+         #
+#    By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/05 15:40:14 by vviterbo          #+#    #+#              #
-#    Updated: 2025/07/19 13:28:17 by vviterbo         ###   ########.fr        #
+#    Updated: 2025/07/22 23:28:30 by victorviter      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = AbstractAnimal
+NAME = SomeGame
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
 
 INCLUDE = -I./include/
 
-SRCS_MAIN_F = main.cpp Animal.cpp Dog.cpp Cat.cpp wrongAnimal.cpp wrongCat.cpp \
-			  Brain.cpp
+SRCS_MAIN_F =	main.cpp AMateria.cpp Ice.cpp Cure.cpp \
+				Character.cpp ICharacter.cpp \
+				IMateriaSource.cpp MateriaSource.cpp
 
 SRCS = $(addprefix srcs/, $(SRCS_MAIN_F))
 

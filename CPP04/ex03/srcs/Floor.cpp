@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Floor.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 16:23:08 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/22 16:32:47 by vviterbo         ###   ########.fr       */
+/*   Created: 2025/07/22 23:40:36 by victorviter       #+#    #+#             */
+/*   Updated: 2025/07/22 23:49:36 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,42 @@ Floor::Floor() {}
 
 Floor::Floor(Floor &other)
 {
-	LList	*node;
-
-	mopFloor();
-	node = other._floor;
-	while (node)\
-	{
-		this->_floor->append(new LList(node));
-		node = node->next;
-	}
-	this->_floor = 
+    for (unsigned int i = 0; i < 100; i++)
+        this->_floor[i] = other._floor[i]->clone();
 }
-Floor::Floor &operator=(Floor &other);
-Floor::~Floor();
 
-void	Floor::dropObj(AMateria *m);
-void	Floor::mopFloor(void);
-	protected:
-		static LList	*_floor;
+Floor Floor::operator=(Floor &other)
+{
+    this->mopFloor();
+    for (unsigned int i = 0; i < 100; i++)
+        this->_floor[i] = other._floor[i]->clone();
+}
+
+Floor::~Floor()
+{
+    this->mopFloor();   
+}
+		
+void	Floor::dropFloor(AMateria *m)
+{
+    for (unsigned int i = 0; i < 100; i++)
+    {
+        if (!this->_floor[i])
+        {
+            this->_floor[i] = m;
+            return ;
+        }
+    }
+}
+
+void	Floor::mopFloor()
+{
+    for (unsigned int i = 0; i < 100; i++)
+    {
+        if (this->_floor[i])
+        {
+            delete this->_floor[i];
+            this->_floor[i] = NULL;
+        }
+    }
+}

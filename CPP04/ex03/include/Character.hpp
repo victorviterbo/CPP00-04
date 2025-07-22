@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 13:35:08 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/22 14:29:47 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/22 23:36:42 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 class Character : public ICharacter{
 	public:
 		Character();
+		Character(std::string name);
 		Character(Character &other);
 		Character &operator=(Character &other);
 
@@ -31,9 +32,7 @@ class Character : public ICharacter{
 		void 				equip(AMateria* m);
 		void				unequip(int idx);
 		void				use(int idx, ICharacter& target);
-		static				floor_add;
 	protected :
 		std::string			_name;
 		AMateria			*_inventory[4];
-		unsigned int		_inven_idx;
 };

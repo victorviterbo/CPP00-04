@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/20 17:03:02 by victorviter       #+#    #+#             */
-/*   Updated: 2025/07/22 23:25:56 by victorviter      ###   ########.fr       */
+/*   Created: 2025/07/22 21:16:57 by victorviter       #+#    #+#             */
+/*   Updated: 2025/07/22 23:16:14 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,16 @@
 #include <string>
 
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class IMateriaSource
-{
-	public:
-		IMateriaSource();
-		IMateriaSource(IMateriaSource &other);
-		virtual IMateriaSource	&operator=(IMateriaSource &other);
-		virtual	~IMateriaSource() {};
-		virtual void		learnMateria(AMateria *m) = 0;
-		virtual AMateria*	createMateria(std::string const & type) = 0;
+class Ice : public AMateria {
+    public :
+        Ice();
+        Ice(Ice &other);
+        Ice &operator=(Ice &other);
+        ~Ice();
+
+        std::string const   &getType() const;
+        Ice*	            clone() const;
+        void		        use(ICharacter& target);
 };

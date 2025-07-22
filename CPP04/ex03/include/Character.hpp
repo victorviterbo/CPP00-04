@@ -6,7 +6,7 @@
 /*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 13:35:08 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/20 17:50:23 by victorviter      ###   ########.fr       */
+/*   Updated: 2025/07/21 19:01:26 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Character : public ICharacter{
 	public:
 		Character();
 		Character(Character &other);
-		Character operator=(Character &other);
+		Character &operator=(Character &other);
 
 		std::string const	&getName() const;
 		void 				equip(AMateria* m);

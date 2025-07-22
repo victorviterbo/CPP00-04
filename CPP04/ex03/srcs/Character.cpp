@@ -6,7 +6,7 @@
 /*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 13:35:08 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/20 17:50:00 by victorviter      ###   ########.fr       */
+/*   Updated: 2025/07/21 19:08:23 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Character::Character(Character &other)
 	this->_name = other._name;
 }
 
-Character operator=(Character &other)
+Character &Character::operator=(Character &other)
 {
 	for (unsigned int i = 0; i < this->_inven_idx ; i++)
 		delete this->_inventory[i];
@@ -37,8 +37,28 @@ Character operator=(Character &other)
 	this->_inven_idx = other._inven_idx;
 }
 
-		std::string const	&getName() const;
-		void 				equip(AMateria* m);
-		void				unequip(int idx);
-		void				use(int idx, ICharacter& target);
-};
+std::string const	&Character::getName(void) const
+{
+	return (this->_name);
+}
+
+void	Character::equip(AMateria* m)
+{
+	if (this->_inven_idx > 3)
+		return ;
+	this->_inventory[this->_inven_idx] = m;
+	this->_inven_idx ++;
+}
+
+void	Character::unequip(int idx)
+{
+	if (this->_inven_idx < idx)
+		return ;
+	this->_inventory[idx] = nullptr;
+	this->_inven_idx --;
+}
+
+void				use(int idx, ICharacter& target)
+{}
+
+

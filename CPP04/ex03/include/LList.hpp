@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   LList.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/19 13:35:08 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/22 14:29:47 by vviterbo         ###   ########.fr       */
+/*   Created: 2025/07/22 16:00:42 by vviterbo          #+#    #+#             */
+/*   Updated: 2025/07/22 16:29:45 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,17 @@
 #include <sstream>
 #include <string>
 
-#include "ICharacter.hpp"
-#include "AMateria.hpp"
+class LList {
+    public :
+		LList();
+		LList(void *val);
+		LList(LList &other);
+		LList &operator=(LList &other);
+		~LList();
 
-class Character : public ICharacter{
-	public:
-		Character();
-		Character(Character &other);
-		Character &operator=(Character &other);
-
-		std::string const	&getName() const;
-		void 				equip(AMateria* m);
-		void				unequip(int idx);
-		void				use(int idx, ICharacter& target);
-		static				floor_add;
-	protected :
-		std::string			_name;
-		AMateria			*_inventory[4];
-		unsigned int		_inven_idx;
+		void	append(LList *newNode);
+		void	deleteList(LList *list);
+	private :
+		void	*data;
+		LList	*next;
 };

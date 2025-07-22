@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   Floor.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/19 13:35:08 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/22 14:29:47 by vviterbo         ###   ########.fr       */
+/*   Created: 2025/07/22 15:54:30 by vviterbo          #+#    #+#             */
+/*   Updated: 2025/07/22 16:23:01 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,18 @@
 #include <sstream>
 #include <string>
 
-#include "ICharacter.hpp"
 #include "AMateria.hpp"
+#include "LList.hpp"
 
-class Character : public ICharacter{
+class Floor {
 	public:
-		Character();
-		Character(Character &other);
-		Character &operator=(Character &other);
+		Floor();
+		Floor(Floor &other);
+		Floor &operator=(Floor &other);
+		~Floor();
 
-		std::string const	&getName() const;
-		void 				equip(AMateria* m);
-		void				unequip(int idx);
-		void				use(int idx, ICharacter& target);
-		static				floor_add;
-	protected :
-		std::string			_name;
-		AMateria			*_inventory[4];
-		unsigned int		_inven_idx;
+		void	dropObj(AMateria *m);
+		void	mopFloor(void);
+	protected:
+		static LList	*_floor;
 };

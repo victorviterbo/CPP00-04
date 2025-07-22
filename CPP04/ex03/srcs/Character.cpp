@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 13:35:08 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/22 14:22:17 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/07/22 14:29:04 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,21 +44,28 @@ std::string const	&Character::getName(void) const
 
 void	Character::equip(AMateria* m)
 {
-	if (this->_inven_idx > 3)
-		return ;
-	this->_inventory[this->_inven_idx] = m;
-	this->_inven_idx ++;
+	for (unsigned int i = 0; i < 4; i++)
+	{
+		if (!this->_inventory[i])
+		{
+			this->_inventory[i] = m;
+			return ;
+		}
+	}
 }
 
 void	Character::unequip(int idx)
 {
-	if (this->_inven_idx < idx)
+	if (!this->_inventory[idx])
 		return ;
+	
 	this->_inventory[idx] = nullptr;
-	this->_inven_idx --;
 }
 
-void	use(int idx, ICharacter& target)
-{}
+void	Character::use(int idx, ICharacter& target)
+{
+	if ()
+	this->inve
+}
 
 

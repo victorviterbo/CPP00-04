@@ -6,7 +6,7 @@
 /*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 13:35:08 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/22 23:36:42 by victorviter      ###   ########.fr       */
+/*   Updated: 2025/07/23 15:36:35 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,15 @@
 
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
+#include "Floor.hpp"
 
-class Character : public ICharacter{
+class Character : public ICharacter {
 	public:
 		Character();
 		Character(std::string name);
 		Character(Character &other);
 		Character &operator=(Character &other);
-
+		~Character() ;
 		std::string const	&getName() const;
 		void 				equip(AMateria* m);
 		void				unequip(int idx);
@@ -35,4 +36,5 @@ class Character : public ICharacter{
 	protected :
 		std::string			_name;
 		AMateria			*_inventory[4];
+		Floor				_floor;
 };

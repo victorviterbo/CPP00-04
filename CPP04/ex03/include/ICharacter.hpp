@@ -6,7 +6,7 @@
 /*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 13:35:08 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/22 23:27:27 by victorviter      ###   ########.fr       */
+/*   Updated: 2025/07/23 15:21:55 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <string>
 
 #include "AMateria.hpp"
+#include "Floor.hpp"
 
 class ICharacter {
 	public:

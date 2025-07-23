@@ -6,7 +6,7 @@
 /*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 23:36:53 by victorviter       #+#    #+#             */
-/*   Updated: 2025/07/22 23:41:12 by victorviter      ###   ########.fr       */
+/*   Updated: 2025/07/23 15:36:15 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,7 @@ class Floor {
 		void	dropFloor(AMateria *m);
 		void	mopFloor();
 	private :
-		static AMateria		*_floor[20];
+		static const int	_mat_size = 20;
+		AMateria			*_materias[_mat_size];
+		int					_mat_idx;
 };

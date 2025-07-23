@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/19 13:35:08 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/22 23:36:28 by victorviter      ###   ########.fr       */
+/*   Created: 2025/07/23 15:25:40 by victorviter       #+#    #+#             */
+/*   Updated: 2025/07/23 15:38:51 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,15 @@ Character &Character::operator=(Character &other)
 	return (*this);
 }
 
+Character::~Character()
+{
+	for (unsigned int i = 0; i < 4; i++)
+	{
+		if (this->_inventory[i])
+			delete this->_inventory[i];
+	}
+}
+
 std::string const	&Character::getName(void) const
 {
 	return (this->_name);
@@ -50,7 +59,7 @@ void	Character::equip(AMateria* m)
 {
 	for (unsigned int i = 0; i < 4; i++)
 	{
-		if (this->_inventory[i]->getType() == m->getType())
+		if (this->_inventory[i] && this->_inventory[i]->getType() == m->getType())
 		{
 			std::cout << this->getName() << " already have this Materia" << std::endl;
 			return ;
@@ -72,6 +81,7 @@ void	Character::unequip(int idx)
 {
 	if (!this->_inventory[idx])
 		return ;
+	this->_floor.dropFloor(this->_inventory[idx]);
 	this->_inventory[idx] = nullptr;
 }
 

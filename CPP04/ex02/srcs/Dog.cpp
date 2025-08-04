@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
+/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:37:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/19 17:18:22 by victorviter      ###   ########.fr       */
+/*   Updated: 2025/08/04 16:27:42 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Dog::Dog(std::string name) : Animal(name)
 	this->_brain = new Brain();
 }
 
-Dog::Dog(Dog &other)
+Dog::Dog(Dog &other) : Animal(other)
 {
 	std::cout << "Dog Copy Constructor Called" << std::endl;
 	this->_type = other._type;

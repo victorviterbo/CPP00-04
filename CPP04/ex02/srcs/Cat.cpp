@@ -27,7 +27,7 @@ Cat::Cat(std::string name) : Animal(name)
 	this->_brain = new Brain();
 }
 
-Cat::Cat(Cat &other)
+Cat::Cat(Cat &other) : Animal(other)
 {
 	std::cout << "Cat Copy Constructor Called" << std::endl;
 	this->_type = other._type;

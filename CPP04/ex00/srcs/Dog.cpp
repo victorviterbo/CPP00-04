@@ -6,7 +6,7 @@
 /*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 13:37:28 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/18 12:48:22 by vviterbo         ###   ########.fr       */
+/*   Updated: 2025/08/04 16:03:11 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,9 @@ Dog::Dog(std::string name) : Animal(name)
 	this->_type = name;
 }
 
-Dog::Dog(Dog &other)
+Dog::Dog(Dog &other) : Animal(other)
 {
 	std::cout << "Dog Copy Constructor Called" << std::endl;
-	this->_type = other._type;
 }
 
 Dog &Dog::operator=(Dog &operand)

@@ -24,10 +24,9 @@ Cat::Cat(std::string name) : Animal(name)
 	this->_type = "Cat";
 }
 
-Cat::Cat(Cat &other)
+Cat::Cat(Cat &other) : Animal(other)
 {
 	std::cout << "Cat Copy Constructor Called" << std::endl;
-	this->_type = other._type;
 }
 
 Cat &Cat::operator=(Cat &operand)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
+/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 17:03:02 by victorviter       #+#    #+#             */
-/*   Updated: 2025/07/22 23:53:08 by victorviter      ###   ########.fr       */
+/*   Updated: 2025/08/04 16:59:44 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ class MateriaSource : public IMateriaSource
 		void		learnMateria(AMateria *m);
 		AMateria*	createMateria(std::string const & type);
 	private :
-		AMateria	*_materias[10];
+		static const int	_msize = 10;
+		AMateria			*_materias[_msize];
 };

@@ -3,34 +3,55 @@
 /*                                                        :::      ::::::::   */
 /*   Floor.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
+/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 15:26:04 by victorviter       #+#    #+#             */
-/*   Updated: 2025/07/23 15:26:19 by victorviter      ###   ########.fr       */
+/*   Updated: 2025/08/04 17:43:57 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Floor.hpp"
 
-Floor::Floor() {}
+Floor::Floor()
+{
+    for (unsigned int i = 0; i < this->_mat_size; i++)
+        this->_materias[i] = NULL;
+    this->_mat_idx = 0;
+}
 
 Floor::Floor(Floor &other)
 {
     for (unsigned int i = 0; i < this->_mat_size; i++)
         this->_materias[i] = other._materias[i]->clone();
+    this->_mat_idx = other._mat_idx;
 }
 
 Floor Floor::operator=(Floor &other)
 {
-    this->mopFloor();
+    for (unsigned int i = 0; i < this->_mat_size; i++)
+    {
+        if (this->_materias[i])
+        {
+            delete this->_materias[i];
+            this->_materias[i] = NULL;
+        }
+    }
     for (unsigned int i = 0; i < this->_mat_size; i++)
         this->_materias[i] = other._materias[i]->clone();
+    this->_mat_idx = other._mat_idx;
     return (*this);
 }
 
 Floor::~Floor()
 {
-    this->mopFloor();   
+    for (unsigned int i = 0; i < this->_mat_size; i++)
+    {
+        if (this->_materias[i])
+        {
+            delete this->_materias[i];
+            this->_materias[i] = NULL;
+        }
+    }
 }
 		
 void	Floor::dropFloor(AMateria *m)

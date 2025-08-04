@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Floor.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
+/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 23:36:53 by victorviter       #+#    #+#             */
-/*   Updated: 2025/07/23 15:36:15 by victorviter      ###   ########.fr       */
+/*   Updated: 2025/08/04 16:41:35 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

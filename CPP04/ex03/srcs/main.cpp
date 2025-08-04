@@ -6,7 +6,7 @@
 /*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 15:24:15 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/25 11:33:20 by victorviter      ###   ########.fr       */
+/*   Updated: 2025/08/04 17:53:50 by victorviter      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int main()
 	
 	me->use(0, *bob);
 	me->use(1, *bob);
+	me->unequip(0);
+	me->unequip(1);
 	delete bob;
 	delete me;
 	delete src;

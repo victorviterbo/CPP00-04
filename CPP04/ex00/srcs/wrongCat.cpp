@@ -24,10 +24,9 @@ wrongCat::wrongCat(std::string name) : wrongAnimal(name)
 	this->_type = "wrongCat";
 }
 
-wrongCat::wrongCat(wrongCat &other)
+wrongCat::wrongCat(wrongCat &other) : wrongAnimal(other)
 {
 	std::cout << "wrongCat Copy Constructor Called" << std::endl;
-	this->_type = other._type;
 }
 
 wrongCat &wrongCat::operator=(wrongCat &operand)

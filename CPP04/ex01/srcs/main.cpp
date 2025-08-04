@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
+/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 15:24:15 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/07/19 17:31:51 by victorviter      ###   ########.fr       */
+/*   Updated: 2025/08/04 16:26:52 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,8 @@ int	main(void)
 		farm[i] = new Cat();
 	for (int i = 0; i < farm_size; i++)
 		farm[i]->makeSound();
-	for (int i = 1; i < farm_size; i++)
+	for (int i = 0; i < farm_size; i++)
 		delete farm[i];
-	
 	good_boy->getBrain()->newIdea("I am hungry...");
 	best_boy = new Dog(*good_boy);
 	good_boy->getBrain()->newIdea("OMG ! It's best boy !");
@@ -63,4 +62,9 @@ int	main(void)
 	std::cout << "\nfilthy_feline1 is thinking : " << std::endl;
 	filthy_feline1->getBrain()->getIdea();
 	filthy_feline1->getBrain()->newIdea("I am not smart enough to hold so many thougths", 100);
+	
+	delete good_boy;
+	delete best_boy;
+	delete filthy_feline1;
+	delete filthy_feline2;
 }

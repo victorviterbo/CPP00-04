@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victorviterbo <victorviterbo@student.42    +#+  +:+       +#+        */
+/*   By: vviterbo <vviterbo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 15:24:15 by vviterbo          #+#    #+#             */
-/*   Updated: 2025/08/04 17:53:50 by victorviter      ###   ########.fr       */
+/*   Updated: 2025/08/05 15:24:17 by vviterbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,18 @@ int main()
 	me->use(1, *bob);
 	me->unequip(0);
 	me->unequip(1);
+
+	Character* p1 = new Character("p1");
+	p1->equip(src->createMateria("ice"));
+	Character* p2 = new Character(*p1);
+	std::cout << p2->getName() << std::endl;
+
+	delete p1;
+	p2->use(0, *bob);
+	
 	delete bob;
 	delete me;
 	delete src;
+	delete p2;
 	return 0;
 }
